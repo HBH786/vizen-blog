@@ -1,33 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import BlogPostCard from '../components/BlogPostCard.astro';
+import { getCollection } from 'astro:content';
 
-const recentPosts = [
-  {
-    title: "Understanding Nootropics: Cognitive Enhancers Explained",
-    excerpt: "Explore the world of nootropics and how they may improve cognitive function and mental performance.",
-    image: "/images/nootropics.jpg",
-    url: "/blog/understanding-nootropics",
-    date: "2023-05-20",
-    category: "Nootropics"
-  },
-  {
-    title: "The Importance of Vitamin D for Overall Health",
-    excerpt: "Discover why Vitamin D is crucial for your health and how to ensure you're getting enough through diet and supplements.",
-    image: "/images/vitamin-d.jpg",
-    url: "/blog/importance-of-vitamin-d",
-    date: "2023-05-15",
-    category: "Vitamins"
-  },
-  {
-    title: "Natural Remedies for Stress and Anxiety",
-    excerpt: "Learn about effective natural remedies and lifestyle changes to manage stress and promote relaxation.",
-    image: "/images/stress-relief.jpg",
-    url: "/blog/natural-remedies-for-stress",
-    date: "2023-05-10",
-    category: "Natural Remedies"
-  }
-];
+const posts = await getCollection('blog');
+const recentPosts = posts
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
+  .slice(0, 3);
 
 const categories = [
   { name: "Nootropics", description: "Cognitive enhancers for mental performance", icon: "brain" },
@@ -87,7 +66,14 @@ const categories = [
     <h2 class="text-2xl font-heading font-bold mb-6 text-secondary">Recent Blog Posts</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {recentPosts.map((post) => (
-        <BlogPostCard {...post} />
+        <BlogPostCard
+          title={post.data.title}
+          excerpt={post.data.excerpt}
+          image={post.data.image}
+          url={`/blog/${post.slug}`}
+          date={new Date(post.data.date).toLocaleDateString()}
+          category={post.data.category}
+        />
       ))}
     </div>
     <div class="text-center mt-8">
