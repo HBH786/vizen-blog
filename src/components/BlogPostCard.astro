@@ -1,0 +1,26 @@
+---
+export interface Props {
+  title: string;
+  excerpt: string;
+  image: string;
+  url: string;
+  date: string;
+  category: string;
+}
+
+const { title, excerpt, image, url, date, category } = Astro.props;
+---
+
+<article class="bg-white rounded-lg shadow-sm overflow-hidden">
+  <img src={image} alt={title} class="w-full h-48 object-cover" />
+  <div class="p-6">
+    <p class="text-sm text-gray-500 mb-2">{date} | {category}</p>
+    <h2 class="text-xl font-heading font-bold mb-2">
+      <a href={url} class="text-text hover:text-secondary">{title}</a>
+    </h2>
+    <p class="text-gray-700 mb-4">{excerpt}</p>
+    <a href={url} class="inline-block bg-secondary text-white py-2 px-4 rounded hover:bg-tertiary transition-colors duration-300">
+      Read More
+    </a>
+  </div>
+</article>

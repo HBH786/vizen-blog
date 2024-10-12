@@ -1,0 +1,35 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-tertiary text-white py-8">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-wrap justify-between">
+      <div class="w-full md:w-1/3 mb-6 md:mb-0">
+        <h3 class="text-xl font-heading font-bold mb-4">VIZEN</h3>
+        <p class="text-sm">Your trusted source for natural supplements, vitamins, and overall wellness.</p>
+      </div>
+      <div class="w-full md:w-1/3 mb-6 md:mb-0">
+        <h4 class="text-lg font-heading font-bold mb-4">Quick Links</h4>
+        <ul class="space-y-2">
+          <li><a href="/about" class="hover:text-accent">About Us</a></li>
+          <li><a href="/contact" class="hover:text-accent">Contact</a></li>
+          <li><a href="/privacy-policy" class="hover:text-accent">Privacy Policy</a></li>
+          <li><a href="/terms-of-service" class="hover:text-accent">Terms of Service</a></li>
+        </ul>
+      </div>
+      <div class="w-full md:w-1/3">
+        <h4 class="text-lg font-heading font-bold mb-4">Follow Us</h4>
+        <div class="flex space-x-4">
+          <a href="#" class="text-white hover:text-accent"><span class="sr-only">Facebook</span><i class="fab fa-facebook"></i></a>
+          <a href="#" class="text-white hover:text-accent"><span class="sr-only">Twitter</span><i class="fab fa-twitter"></i></a>
+          <a href="#" class="text-white hover:text-accent"><span class="sr-only">Instagram</span><i class="fab fa-instagram"></i></a>
+          <a href="#" class="text-white hover:text-accent"><span class="sr-only">Pinterest</span><i class="fab fa-pinterest"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="mt-8 text-center text-sm">
+      <p>&copy; {currentYear} VIZEN. All rights reserved.</p>
+    </div>
+  </div>
+</footer>

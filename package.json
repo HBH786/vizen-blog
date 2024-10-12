@@ -1,0 +1,23 @@
+{
+  "name": "vizen-blog",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "create-zip": "node scripts/create-project-zip.js"
+  },
+  "dependencies": {
+    "@astrojs/tailwind": "^5.1.0",
+    "@fontsource/montserrat": "^5.0.8",
+    "@fontsource/open-sans": "^5.0.8",
+    "astro": "^4.15.3",
+    "tailwindcss": "^3.3.3"
+  },
+  "devDependencies": {
+    "archiver": "^5.3.2"
+  }
+}

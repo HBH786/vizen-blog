@@ -1,0 +1,19 @@
+---
+import SearchBar from './SearchBar.astro';
+---
+
+<header class="bg-white shadow-sm">
+  <div class="container mx-auto px-4 py-6 flex justify-between items-center">
+    <a href="/" class="text-2xl font-heading font-bold text-tertiary">VIZEN Blog</a>
+    <nav>
+      <ul class="flex space-x-6">
+        <li><a href="/" class="text-text hover:text-secondary">Home</a></li>
+        <li><a href="/wordpress-blog" class="text-text hover:text-secondary">WordPress Blog</a></li>
+        <li><a href="/categories" class="text-text hover:text-secondary">Categories</a></li>
+        <li><a href="/about" class="text-text hover:text-secondary">About</a></li>
+        <li><a href="/contact" class="text-text hover:text-secondary">Contact</a></li>
+      </ul>
+    </nav>
+    <SearchBar />
+  </div>
+</header>

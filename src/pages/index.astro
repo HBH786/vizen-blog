@@ -1,0 +1,68 @@
+---
+import Layout from '../layouts/Layout.astro';
+import BlogPostCard from '../components/BlogPostCard.astro';
+
+const recentPosts = [
+  {
+    title: "Understanding Nootropics: Cognitive Enhancers Explained",
+    excerpt: "Explore the world of nootropics and how they may improve cognitive function and mental performance.",
+    image: "/images/nootropics.jpg",
+    url: "/blog/understanding-nootropics",
+    date: "2023-05-20",
+    category: "Nootropics"
+  },
+  {
+    title: "The Importance of Vitamin D for Overall Health",
+    excerpt: "Discover why Vitamin D is crucial for your health and how to ensure you're getting enough through diet and supplements.",
+    image: "/images/vitamin-d.jpg",
+    url: "/blog/importance-of-vitamin-d",
+    date: "2023-05-15",
+    category: "Vitamins"
+  },
+  {
+    title: "Natural Remedies for Stress and Anxiety",
+    excerpt: "Learn about effective natural remedies and lifestyle changes to manage stress and promote relaxation.",
+    image: "/images/stress-relief.jpg",
+    url: "/blog/natural-remedies-for-stress",
+    date: "2023-05-10",
+    category: "Natural Remedies"
+  }
+];
+---
+
+<Layout title="VIZEN - Natural Health and Wellness Blog">
+  <h1 class="text-4xl font-heading font-bold text-center mb-4 text-tertiary">Welcome to VIZEN Blog</h1>
+  <p class="text-center text-xl mb-8">Your trusted online source for information on natural supplements, vitamins and overall wellness so you can unlock your true natural health potential.</p>
+  
+  <section class="mb-12">
+    <h2 class="text-2xl font-heading font-bold mb-6 text-secondary">Recent Blog Posts</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {recentPosts.map((post) => (
+        <BlogPostCard {...post} />
+      ))}
+    </div>
+    <div class="text-center mt-8">
+      <a href="/blog" class="inline-block bg-secondary text-white py-2 px-6 rounded-lg hover:bg-tertiary transition-colors duration-300">
+        View All Blog Posts
+      </a>
+    </div>
+  </section>
+  
+  <section class="bg-accent bg-opacity-20 p-8 rounded-lg">
+    <h2 class="text-2xl font-heading font-bold mb-4 text-tertiary">Subscribe to Our Blog</h2>
+    <p class="mb-4">Stay up-to-date with our latest blog posts, health tips, product reviews, and exclusive offers.</p>
+    <form class="flex">
+      <input
+        type="email"
+        placeholder="Enter your email"
+        class="flex-grow py-2 px-4 rounded-l-lg border-t border-b border-l border-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary"
+      />
+      <button
+        type="submit"
+        class="bg-secondary text-white py-2 px-6 rounded-r-lg hover:bg-tertiary transition-colors duration-300"
+      >
+        Subscribe
+      </button>
+    </form>
+  </section>
+</Layout>

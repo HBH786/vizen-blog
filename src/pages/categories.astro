@@ -1,0 +1,27 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const categories = [
+  { name: "Vitamins", description: "Essential nutrients for optimal health" },
+  { name: "Supplements", description: "Boost your nutrition with targeted supplements" },
+  { name: "Nootropics", description: "Enhance cognitive function and mental performance" },
+  { name: "Natural Remedies", description: "Traditional and holistic approaches to wellness" },
+  { name: "Herbal Medicine", description: "The healing power of plants and herbs" },
+  { name: "Nutrition", description: "Fuel your body with the right foods" },
+  { name: "Probiotics", description: "Augment your gut to unleash your health potential" },
+];
+---
+
+<Layout title="Categories - HealthyLife">
+  <h1 class="text-4xl font-heading font-bold text-center mb-8">Categories</h1>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    {categories.map((category) => (
+      <a href={`/category/${category.name.toLowerCase().replace(' ', '-')}`} class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+        <div class="p-6">
+          <h2 class="text-xl font-heading font-bold mb-2">{category.name}</h2>
+          <p class="text-gray-700">{category.description}</p>
+        </div>
+      </a>
+    ))}
+  </div>
+</Layout>
