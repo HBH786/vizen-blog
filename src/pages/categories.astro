@@ -2,26 +2,38 @@
 import Layout from '../layouts/Layout.astro';
 
 const categories = [
-  { name: "Vitamins", description: "Essential nutrients for optimal health" },
-  { name: "Supplements", description: "Boost your nutrition with targeted supplements" },
-  { name: "Nootropics", description: "Enhance cognitive function and mental performance" },
-  { name: "Natural Remedies", description: "Traditional and holistic approaches to wellness" },
-  { name: "Herbal Medicine", description: "The healing power of plants and herbs" },
-  { name: "Nutrition", description: "Fuel your body with the right foods" },
-  { name: "Probiotics", description: "Augment your gut to unleash your health potential" },
+  { name: "Nootropics", description: "Cognitive enhancers for mental performance", icon: "brain" },
+  { name: "Supplements", description: "Boost your nutrition with targeted supplements", icon: "capsules" },
+  { name: "Vitamins", description: "Essential nutrients for optimal health", icon: "vitamin" },
+  { name: "Natural Remedies", description: "Traditional and holistic approaches to wellness", icon: "leaf" },
+  { name: "Herbal Medicine", description: "The healing power of plants and herbs", icon: "herb" },
+  { name: "Probiotics", description: "Beneficial bacteria for gut health and overall wellness", icon: "bacteria" },
 ];
+
 ---
 
-<Layout title="Categories - HealthyLife">
+<Layout title="Categories - VIZEN">
   <h1 class="text-4xl font-heading font-bold text-center mb-8">Categories</h1>
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-    {categories.map((category) => (
-      <a href={`/category/${category.name.toLowerCase().replace(' ', '-')}`} class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-        <div class="p-6">
-          <h2 class="text-xl font-heading font-bold mb-2">{category.name}</h2>
-          <p class="text-gray-700">{category.description}</p>
-        </div>
-      </a>
-    ))}
+  <div class="max-w-3xl mx-auto">
+    <p class="text-center mb-8 text-lg">Explore our categories to find information on various health topics. Click on a category to see related articles!</p>
+    <div class="space-y-6">
+      {categories.map((category) => (
+        <a href={`/category/${category.name.toLowerCase().replace(' ', '-')}`} class="block">
+          <div id={category.name.toLowerCase().replace(' ', '-')} class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+            <div class="p-6 flex items-center">
+              <div class="w-12 h-12 mr-4 flex-shrink-0">
+                <svg class="w-full h-full text-secondary">
+                  <use xlink:href={`/images/category-icons.svg#${category.icon}`}></use>
+                </svg>
+              </div>
+              <div>
+                <h2 class="text-xl font-heading font-bold mb-2">{category.name}</h2>
+                <p class="text-gray-700">{category.description}</p>
+              </div>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
   </div>
 </Layout>

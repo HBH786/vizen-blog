@@ -28,12 +28,61 @@ const recentPosts = [
     category: "Natural Remedies"
   }
 ];
+
+const categories = [
+  { name: "Nootropics", description: "Cognitive enhancers for mental performance", icon: "brain" },
+  { name: "Supplements", description: "Boost your nutrition with targeted supplements", icon: "capsules" },
+  { name: "Vitamins", description: "Essential nutrients for optimal health", icon: "vitamin" },
+  { name: "Natural Remedies", description: "Traditional and holistic approaches to wellness", icon: "leaf" },
+  { name: "Herbal Medicine", description: "The healing power of plants and herbs", icon: "herb" },
+  { name: "Probiotics", description: "Beneficial bacteria for gut health and overall wellness", icon: "bacteria" },
+];
 ---
 
 <Layout title="VIZEN - Natural Health and Wellness Blog">
   <h1 class="text-4xl font-heading font-bold text-center mb-4 text-tertiary">Welcome to VIZEN Blog</h1>
   <p class="text-center text-xl mb-8">Your trusted online source for information on natural supplements, vitamins and overall wellness so you can unlock your true natural health potential.</p>
   
+  <section class="mb-12">
+    <h2 class="text-3xl font-heading font-bold text-center mb-8">Topics</h2>
+    <div class="bg-gray-100 py-12">
+      <div class="container mx-auto">
+        <h3 class="text-2xl font-heading font-bold text-center mb-6">Find What You're Looking For</h3>
+        <div class="max-w-2xl mx-auto mb-12">
+          <form class="flex">
+            <input
+              type="text"
+              placeholder="Search our website..."
+              class="flex-grow py-2 px-4 rounded-l-lg border-t border-b border-l border-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary"
+            />
+            <button
+              type="submit"
+              class="bg-secondary text-white py-2 px-6 rounded-r-lg hover:bg-tertiary transition-colors duration-300"
+            >
+              Search
+            </button>
+          </form>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8">
+          {categories.map((category) => (
+            <div class="bg-white p-6 rounded-lg shadow-md text-center">
+              <div class="w-16 h-16 mx-auto mb-4">
+                <svg class="w-full h-full text-secondary">
+                  <use xlink:href={`/images/category-icons.svg#${category.icon}`}></use>
+                </svg>
+              </div>
+              <h4 class="text-lg font-heading font-bold mb-2">{category.name}</h4>
+              <p class="text-sm mb-4">{category.description}</p>
+              <a href={`/category/${category.name.toLowerCase().replace(' ', '-')}`} class="inline-block bg-secondary text-white py-2 px-4 rounded hover:bg-tertiary transition-colors duration-300">
+                View All
+              </a>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="mb-12">
     <h2 class="text-2xl font-heading font-bold mb-6 text-secondary">Recent Blog Posts</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

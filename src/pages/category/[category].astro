@@ -1,0 +1,22 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CategoryPlaceholder from '../../components/CategoryPlaceholder.astro';
+
+export function getStaticPaths() {
+  return [
+    {params: {category: 'nootropics'}},
+    {params: {category: 'supplements'}},
+    {params: {category: 'vitamins'}},
+    {params: {category: 'natural-remedies'}},
+    {params: {category: 'herbal-medicine'}},
+    {params: {category: 'probiotics'}},
+  ];
+}
+
+const { category } = Astro.params;
+const categoryTitle = category.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+---
+
+<Layout title={`${categoryTitle} - VIZEN`}>
+  <CategoryPlaceholder category={categoryTitle} />
+</Layout>
