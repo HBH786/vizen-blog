@@ -1,6 +1,27 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { AstroSeo } from "@astrolib/seo";
+
+const site = Astro.site?.href;
 ---
+
+<AstroSeo
+  title="Contact - VIZEN"
+  noindex={false}
+  description="Get in touch."
+  openGraph={{
+    url: site,
+    title: "Contact - VIZEN",
+    type: "website",
+    site_name: "VIZEN Blog",
+    description:
+      "Get in touch.",
+    images: [],
+  }}
+  twitter={{
+    cardType: "summary",
+  }}
+/>
 
 <Layout title="Contact Us - HealthyLife">
   <h1 class="text-4xl font-heading font-bold text-center mb-8">Contact Us</h1>

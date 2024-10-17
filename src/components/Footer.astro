@@ -1,36 +1,107 @@
 ---
 const currentYear = new Date().getFullYear();
+
+const quickLinks = [
+  { href: "/about", label: "About Us" },
+  { href: "/#", label: "Our Products" },
+  { href: "/blog", label: "Blog" },
+  { href: "/contact", label: "Contact" },
+  { href: "/#", label: "Privacy Policy" },
+  { href: "/#", label: "Terms of Service" },
+  { href: "/disclaimer", label: "Disclaimer" },
+];
+
+const socialLinks = [
+  { href: "#", icon: "facebook", label: "Facebook" },
+  { href: "#", icon: "twitter", label: "Twitter" },
+  { href: "#", icon: "instagram", label: "Instagram" },
+  { href: "#", icon: "pinterest", label: "Pinterest" },
+];
 ---
 
-<footer class="bg-tertiary text-white py-8">
+<footer class="bg-foreground text-black py-16">
   <div class="container mx-auto px-4">
-    <div class="flex flex-wrap justify-between">
-      <div class="w-full md:w-1/3 mb-6 md:mb-0">
-        <h3 class="text-xl font-heading font-bold mb-4">VIZEN</h3>
-        <p class="text-sm">Your trusted source for natural supplements, vitamins, and overall wellness.</p>
-      </div>
-      <div class="w-full md:w-1/3 mb-6 md:mb-0">
-        <h4 class="text-lg font-heading font-bold mb-4">Quick Links</h4>
-        <ul class="space-y-2">
-          <li><a href="/about" class="hover:text-accent">About Us</a></li>
-          <li><a href="/contact" class="hover:text-accent">Contact</a></li>
-          <li><a href="/privacy-policy" class="hover:text-accent">Privacy Policy</a></li>
-          <li><a href="/terms-of-service" class="hover:text-accent">Terms of Service</a></li>
-          <li><a href="/disclaimer" class="hover:text-accent">Disclaimer</a></li>
-        </ul>
-      </div>
-      <div class="w-full md:w-1/3">
-        <h4 class="text-lg font-heading font-bold mb-4">Follow Us</h4>
-        <div class="flex space-x-4">
-          <a href="#" class="text-white hover:text-accent"><span class="sr-only">Facebook</span><i class="fab fa-facebook"></i></a>
-          <a href="#" class="text-white hover:text-accent"><span class="sr-only">Twitter</span><i class="fab fa-twitter"></i></a>
-          <a href="#" class="text-white hover:text-accent"><span class="sr-only">Instagram</span><i class="fab fa-instagram"></i></a>
-          <a href="#" class="text-white hover:text-accent"><span class="sr-only">Pinterest</span><i class="fab fa-pinterest"></i></a>
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div class="space-y-6">
+          <h3 class="text-3xl font-heading font-bold tracking-wide">VIZEN</h3>
+          <p class="text-sm leading-relaxed">
+            Your trusted source for natural supplements, vitamins, and overall
+            wellness.
+          </p>
+          <div class="flex space-x-6">
+            {
+              socialLinks.map(({ href, icon, label }) => (
+                <a
+                  href={href}
+                  class="hover:text-white transition-colors duration-300"
+                  aria-label={label}
+                >
+                  <svg class="size-6 text-lg">
+                    <use xlink:href={`/images/social-icons.svg#${icon}`} />
+                  </svg>
+                </a>
+              ))
+            }
+          </div>
+        </div>
+        <div>
+          <h4 class="text-lg font-heading font-semibold mb-6 uppercase">
+            Quick Links
+          </h4>
+          <ul class="space-y-3">
+            {
+              quickLinks.map(({ href, label }) => (
+                <li>
+                  <a
+                    href={href}
+                    class="text-sm hover:text-secondary hover:underline transition-colors duration-300"
+                  >
+                    {label}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-heading font-semibold mb-6 uppercase">
+            Newsletter
+          </h4>
+          <p class="text-sm mb-4 leading-relaxed">
+            Stay updated with our latest offers and health tips.
+          </p>
+          <form class="space-y-3">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              class="w-full px-4 py-3 bg-secondary/5 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary transition-all duration-300"
+              required
+            />
+            <button
+              type="submit"
+              class="w-full px-4 py-3 text-white bg-secondary rounded-lg hover:bg-tertiary/70 transition-colors duration-300 font-semibold"
+            >
+              Subscribe
+            </button>
+          </form>
+        </div>
+        <div>
+          <h4 class="text-lg font-heading font-semibold mb-6 uppercase">
+            Contact Us
+          </h4>
+          <address class="text-sm not-italic space-y-3">
+            <p>123 Wellness Street</p>
+            <p>Healthy City, HC 12345</p>
+            <p>United States</p>
+            <p class="mt-4">Phone: (123) 456-7890</p>
+            <p>Email: info@vizen.com</p>
+          </address>
         </div>
       </div>
-    </div>
-    <div class="mt-8 text-center text-sm">
-      <p>&copy; {currentYear} VIZEN. All rights reserved.</p>
+      <div class="mt-16 pt-8 border-t border-green-600 text-center text-sm">
+        <p>&copy; {currentYear} VIZEN. All rights reserved.</p>
+      </div>
     </div>
   </div>
 </footer>

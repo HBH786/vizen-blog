@@ -1,0 +1,64 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import { titleToSlug } from "../../utils/categories";
+
+export async function getStaticPaths() {
+  const blogEntries = await getCollection("blog");
+  return blogEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+import { AstroSeo } from "@astrolib/seo";
+
+const site = Astro.site?.href;
+---
+
+<AstroSeo
+  title={`${entry.data.title} - VIZEN`}
+  noindex={false}
+  description={entry.data.excerpt as string}
+  openGraph={{
+    url: site,
+    title: `${entry.data.title}`,
+    type: "website",
+    site_name: "VIZEN Blog",
+    description: `${entry.data.excerpt}`,
+    images: [
+      {
+        url: `${entry.data.image.includes("http") ? entry.data.image : site + entry.data.image}`,
+      },
+    ],
+  }}
+  twitter={{
+    cardType: "summary",
+  }}
+/>
+
+<Layout title={entry.data.title}>
+  <article class="max-w-3xl mx-auto mt-6">
+    <h1 class="text-4xl font-heading font-bold mb-4 leading-[50px]">{entry.data.title}</h1>
+    <p class="text-gray-600 mb-4">
+      {entry.data.publishDate.toLocaleDateString("en-US", {
+        day: "numeric",
+        month: "short",
+        year: "numeric",
+      })} | <a
+        href={`/category/${titleToSlug(entry.data.category)}`}
+        class="hover:text-secondary hover:underline transition-colors duration-300"
+        >{entry.data.category}</a>
+    </p>
+    <img
+      src={entry.data.image}
+      alt={entry.data.title}
+      class="w-full h-64 object-cover mb-8 rounded-lg"
+    />
+    <div class="prose prose-lg mb-10 max-w-3xl">
+      <Content />
+    </div>
+  </article>
+</Layout>

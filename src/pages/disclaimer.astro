@@ -1,20 +1,67 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import { AstroSeo } from "@astrolib/seo";
+
+const site = Astro.site?.href;
 ---
+
+<AstroSeo
+  title="Disclaimer - VIZEN"
+  noindex={false}
+  description="The information provided on this website is for general informational purposes only. It is not intended as a substitute for professional medical advice, diagnosis, or treatment."
+  openGraph={{
+    url: site,
+    title: "Disclaimer - VIZEN",
+    type: "website",
+    site_name: "VIZEN Blog",
+    description:
+      "The information provided on this website is for general informational purposes only. It is not intended as a substitute for professional medical advice, diagnosis, or treatment.",
+    images: [],
+  }}
+  twitter={{
+    cardType: "summary",
+  }}
+/>
 
 <Layout title="Disclaimer - VIZEN">
   <div class="max-w-3xl mx-auto px-4 py-8">
     <h1 class="text-4xl font-heading font-bold mb-6">Disclaimer</h1>
     <div class="prose prose-lg">
-      <p>The information provided on this website is for general informational purposes only. It is not intended as a substitute for professional medical advice, diagnosis, or treatment.</p>
-      
-      <p>Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition. Never disregard professional medical advice or delay in seeking it because of something you have read on this website.</p>
-      
-      <p>The use of any information provided on this website is solely at your own risk. We make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability or availability with respect to the website or the information, products, services, or related graphics contained on the website for any purpose.</p>
-      
-      <p>This website may contain links to external websites that are not provided or maintained by or in any way affiliated with us. Please note that we do not guarantee the accuracy, relevance, timeliness, or completeness of any information on these external websites.</p>
-      
-      <p>We are not responsible for any adverse effects or consequences resulting from either the use of or the misuse of the information contained on this website. Your use of this website indicates your agreement to be bound by this disclaimer.</p>
+      <p>
+        The information provided on this website is for general informational
+        purposes only. It is not intended as a substitute for professional
+        medical advice, diagnosis, or treatment.
+      </p>
+
+      <p>
+        Always seek the advice of your physician or other qualified health
+        provider with any questions you may have regarding a medical condition.
+        Never disregard professional medical advice or delay in seeking it
+        because of something you have read on this website.
+      </p>
+
+      <p>
+        The use of any information provided on this website is solely at your
+        own risk. We make no representations or warranties of any kind, express
+        or implied, about the completeness, accuracy, reliability, suitability
+        or availability with respect to the website or the information,
+        products, services, or related graphics contained on the website for any
+        purpose.
+      </p>
+
+      <p>
+        This website may contain links to external websites that are not
+        provided or maintained by or in any way affiliated with us. Please note
+        that we do not guarantee the accuracy, relevance, timeliness, or
+        completeness of any information on these external websites.
+      </p>
+
+      <p>
+        We are not responsible for any adverse effects or consequences resulting
+        from either the use of or the misuse of the information contained on
+        this website. Your use of this website indicates your agreement to be
+        bound by this disclaimer.
+      </p>
     </div>
   </div>
 </Layout>

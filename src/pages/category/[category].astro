@@ -1,6 +1,8 @@
 ---
+import { getCollection } from 'astro:content';
+import BlogPostCard from '../../components/BlogPostCard.astro';
 import Layout from '../../layouts/Layout.astro';
-import CategoryPlaceholder from '../../components/CategoryPlaceholder.astro';
+import { slugToTitle } from '../../utils/categories';
 
 export function getStaticPaths() {
   return [
@@ -14,9 +16,27 @@ export function getStaticPaths() {
 }
 
 const { category } = Astro.params;
-const categoryTitle = category.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+const categoryTitle = slugToTitle(category);
+
+const categoryPosts = await getCollection('blog', (post) => post.data.category === categoryTitle);
+
+const sortedPosts = categoryPosts.sort((a, b) => new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime());
+
 ---
 
 <Layout title={`${categoryTitle} - VIZEN`}>
-  <CategoryPlaceholder category={categoryTitle} />
+  <div class="container mx-auto px-4 py-8">
+    <h1 class="text-4xl font-heading font-bold text-center mb-8">{categoryTitle}</h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {sortedPosts.map((post) => (
+        <BlogPostCard
+          title={post.data.title}
+          excerpt={post.data.excerpt}
+          image={post.data.image}
+          url={`/blog/${post.slug}`}
+          date={new Date(post.data.publishDate).toLocaleDateString()}
+          category={post.data.category}
+        />
+      ))}
+    </div>
 </Layout>

@@ -1,12 +1,12 @@
 ---
 title: "L-Theanine and Caffeine: The Perfect Cognitive Enhancement Duo"
-excerpt: "Explore the synergistic benefits of combining L-theanine and caffeine for improved focus, alertness, and cognitive performance."
-image: "/images/l-theanine-caffeine.jpg"
-date: "2023-06-02"
-category: "Nootropics"
+excerpt: Explore the synergistic benefits of combining L-theanine and caffeine for improved focus, alertness, and cognitive performance.
+slug: l-theanine-caffeine-synergy
+image: /images/l-theanine-caffeine.jpg
+publishDate: 2023-06-02
+category: Nootropics
+author: Harry
 ---
-
-# L-Theanine and Caffeine: The Perfect Cognitive Enhancement Duo
 
 For those seeking a natural cognitive boost, the combination of L-theanine and caffeine has gained popularity as a powerful nootropic stack. Let's dive into how these two compounds work together to enhance mental performance.
 

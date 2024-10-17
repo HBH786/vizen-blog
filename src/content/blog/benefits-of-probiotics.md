@@ -1,13 +1,12 @@
-
 ---
-title: "The Benefits of Probiotics for Gut Health and Beyond"
-excerpt: "Discover how probiotics can improve your gut health, boost your immune system, and contribute to overall wellness."
-image: "/images/probiotics.jpg"
-date: "2023-05-25"
-category: "Probiotics"
+publishDate: 2023-05-25
+title: The Benefits of Probiotics for Gut Health and Beyond
+slug: benefits-of-probiotics
+excerpt: Discover how probiotics can improve your gut health, boost your immune system, and contribute to overall wellness.
+image: /images/probiotics.jpg
+category: Probiotics
+author: Harry
 ---
-
-# The Benefits of Probiotics for Gut Health and Beyond
 
 Probiotics have gained significant attention in recent years for their potential health benefits. These live microorganisms, when consumed in adequate amounts, can provide numerous health benefits, particularly for your digestive system. In this article, we'll explore the world of probiotics and their impact on gut health and overall wellness.
 

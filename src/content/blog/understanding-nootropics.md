@@ -2,11 +2,12 @@
 title: "Understanding Nootropics: Cognitive Enhancers Explained"
 excerpt: "Explore the world of nootropics and how they may improve cognitive function and mental performance."
 image: "/images/nootropics.jpg"
-date: "2023-05-20"
+slug: understanding-nootropics
+publishDate: 2023-05-20
 category: "Nootropics"
+author: Harry
 ---
 
-# Understanding Nootropics: Cognitive Enhancers Explained
 
 Nootropics, also known as "smart drugs" or cognitive enhancers, are substances that claim to improve cognitive function, particularly executive functions, memory, creativity, or motivation in healthy individuals. In this article, we'll explore the world of nootropics and how they may potentially improve cognitive function and mental performance.
 

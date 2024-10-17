@@ -9,8 +9,28 @@ const categories = [
   { name: "Herbal Medicine", description: "The healing power of plants and herbs", icon: "herb" },
   { name: "Probiotics", description: "Beneficial bacteria for gut health and overall wellness", icon: "bacteria" },
 ];
+import { AstroSeo } from "@astrolib/seo";
 
+const site = Astro.site?.href;
 ---
+
+<AstroSeo
+  title="Categories - VIZEN"
+  noindex={false}
+  description="Explore our categories to find information on various health topics."
+  openGraph={{
+    url: site,
+    title: "Categories - VIZEN",
+    type: "website",
+    site_name: "VIZEN Blog",
+    description:
+      "Explore our categories to find information on various health topics.",
+    images: [],
+  }}
+  twitter={{
+    cardType: "summary",
+  }}
+/>
 
 <Layout title="Categories - VIZEN">
   <h1 class="text-4xl font-heading font-bold text-center mb-8">Categories</h1>

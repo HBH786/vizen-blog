@@ -1,12 +1,13 @@
 ---
 title: "Red Yeast Rice: A Natural Approach to Cholesterol Management"
 excerpt: "Learn about red yeast rice, its potential benefits for cholesterol management, and important considerations for its use."
+slug: red-yeast-rice-cholesterol
 image: "/images/red-yeast-rice.jpg"
-date: "2023-06-05"
+publishDate: 2023-06-05
 category: "Supplements"
+author: Harry
 ---
 
-# Red Yeast Rice: A Natural Approach to Cholesterol Management
 
 Red yeast rice has been used in traditional Chinese medicine for centuries and has gained attention in recent years for its potential to support healthy cholesterol levels. Let's explore this interesting supplement and its implications for heart health.
 
