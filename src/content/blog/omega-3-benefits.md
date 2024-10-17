@@ -1,12 +1,13 @@
 ---
 title: "Omega-3 Fatty Acids: Essential Nutrients for Body and Mind"
-excerpt: "Discover the wide-ranging benefits of omega-3 fatty acids and why they're crucial for your overall health and well-being."
-image: "/images/omega-3-sources.jpg"
-date: "2023-06-08"
-category: "Supplements"
+excerpt: Discover the wide-ranging benefits of omega-3 fatty acids and why they're crucial for your overall health and well-being.
+slug: omega-3-benefits
+image: /images/omega-3-sources.jpg
+publishDate: 2023-06-08
+category: Supplements
+author: Harry
 ---
 
-# Omega-3 Fatty Acids: Essential Nutrients for Body and Mind
 
 Omega-3 fatty acids are a group of essential fats that play a crucial role in various bodily functions. From supporting heart health to potentially boosting mood, these nutrients offer a wide range of benefits. Let's explore why omega-3s are so important and how you can incorporate them into your diet.
 

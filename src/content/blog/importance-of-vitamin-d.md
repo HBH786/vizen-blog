@@ -1,12 +1,13 @@
 ---
-title: "The Importance of Vitamin D for Overall Health"
-excerpt: "Discover why Vitamin D is crucial for your health and how to ensure you're getting enough through diet and supplements."
-image: "/images/vitamin-d.jpg"
-date: "2023-05-15"
-category: "Vitamins"
+title: The Importance of Vitamin D for Overall Health
+excerpt: Discover why Vitamin D is crucial for your health and how to ensure you're getting enough through diet and supplements.
+slug: importance-of-vitamin-d
+image: /images/vitamin-d.jpg
+publishDate: 2023-05-15
+category: Vitamins
+author: Harry
 ---
 
-# The Importance of Vitamin D for Overall Health
 
 Vitamin D, often called the "sunshine vitamin," is a crucial nutrient that plays a vital role in maintaining overall health. In this article, we'll explore why Vitamin D is so important and how you can ensure you're getting enough through diet and supplements.
 

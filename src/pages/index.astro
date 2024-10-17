@@ -1,103 +1,223 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import BlogPostCard from '../components/BlogPostCard.astro';
-import { getCollection } from 'astro:content';
+import { getCollection } from "astro:content";
+import BlogPostCard from "../components/BlogPostCard.astro";
+import Layout from "../layouts/Layout.astro";
+import { AstroSeo } from "@astrolib/seo";
 
-const posts = await getCollection('blog');
+const posts = await getCollection("blog");
 const recentPosts = posts
-  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
+  .sort(
+    (a, b) =>
+      new Date(b.data.publishDate).getTime() -
+      new Date(a.data.publishDate).getTime()
+  )
   .slice(0, 3);
 
 const categories = [
-  { name: "Nootropics", description: "Cognitive enhancers for mental performance", icon: "brain" },
-  { name: "Supplements", description: "Boost your nutrition with targeted supplements", icon: "capsules" },
-  { name: "Vitamins", description: "Essential nutrients for optimal health", icon: "vitamin" },
-  { name: "Natural Remedies", description: "Traditional and holistic approaches to wellness", icon: "leaf" },
-  { name: "Herbal Medicine", description: "The healing power of plants and herbs", icon: "herb" },
-  { name: "Probiotics", description: "Beneficial bacteria for gut health and overall wellness", icon: "bacteria" },
+  {
+    name: "Nootropics",
+    description: "Cognitive enhancers for mental performance",
+    icon: "brain",
+  },
+  {
+    name: "Supplements",
+    description: "Boost your nutrition with targeted supplements",
+    icon: "capsules",
+  },
+  {
+    name: "Vitamins",
+    description: "Essential nutrients for optimal health",
+    icon: "vitamin",
+  },
+  {
+    name: "Natural Remedies",
+    description: "Traditional and holistic approaches to wellness",
+    icon: "leaf",
+  },
+  {
+    name: "Herbal Medicine",
+    description: "The healing power of plants and herbs",
+    icon: "herb",
+  },
+  {
+    name: "Probiotics",
+    description: "Beneficial bacteria for gut health and overall wellness",
+    icon: "bacteria",
+  },
 ];
+const site = Astro.site?.href;
 ---
 
+<AstroSeo
+  title="VIZEN - Natural Health and Wellness Blog"
+  noindex={false}
+  description="Discover evidence-based insights on natural supplements, vitamins, and overall wellness with VIZEN Blog. Your trusted source for unlocking true health potential."
+  openGraph={{
+    url: site,
+    title: "VIZEN - Natural Health and Wellness Blog",
+    type: "website",
+    site_name: "VIZEN Blog",
+    description:
+      "Discover evidence-based insights on natural supplements, vitamins, and overall wellness with VIZEN Blog. Your trusted source for unlocking true health potential.",
+    images: [],
+  }}
+  twitter={{
+    cardType: "summary",
+  }}
+/>
+
 <Layout title="VIZEN - Natural Health and Wellness Blog">
-  <h1 class="text-4xl font-heading font-bold text-center mb-4 text-tertiary">Welcome to VIZEN Blog</h1>
-  <p class="text-center text-xl mb-8">Your trusted online source for information on natural supplements, vitamins and overall wellness so you can unlock your true natural health potential.</p>
-  
-  <section class="mb-12">
-    <h2 class="text-3xl font-heading font-bold text-center mb-8">Topics</h2>
-    <div class="bg-gray-100 py-12">
-      <div class="container mx-auto">
-        <h3 class="text-2xl font-heading font-bold text-center mb-6">Find What You're Looking For</h3>
-        <div class="max-w-2xl mx-auto mb-12">
-          <form class="flex">
-            <input
-              type="text"
-              placeholder="Search our website..."
-              class="flex-grow py-2 px-4 rounded-l-lg border-t border-b border-l border-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary"
-            />
-            <button
-              type="submit"
-              class="bg-secondary text-white py-2 px-6 rounded-r-lg hover:bg-tertiary transition-colors duration-300"
-            >
-              Search
-            </button>
-          </form>
-        </div>
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8">
-          {categories.map((category) => (
-            <div class="bg-white p-6 rounded-lg shadow-md text-center">
-              <div class="w-16 h-16 mx-auto mb-4">
+  <section class="py-20 text-center">
+    <h1 class="text-5xl font-heading font-bold mb-6 text-secondary">
+      Welcome to VIZEN Blog
+    </h1>
+    <p class="text-xl mb-12 max-w-3xl mx-auto text-gray-600">
+      Your trusted online source for information on natural supplements,
+      vitamins, and overall wellness. Unlock your true natural health potential
+      with evidence-based insights and expert advice.
+    </p>
+    <a
+      href="#categories"
+      class="inline-block bg-secondary text-white py-3 px-8 rounded-full text-lg font-semibold hover:bg-tertiary transition-all duration-300 transform hover:scale-105"
+    >
+      Explore Topics
+    </a>
+  </section>
+
+  <section id="categories" class="py-20 bg-gray-50 rounded-3xl mb-20">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl font-heading font-bold text-center mb-12">
+        Discover Our Topics
+      </h2>
+      <div class="max-w-2xl mx-auto mb-12">
+        <form class="flex w-full" action="/search">
+          <input
+            type="search"
+            name="q"
+            placeholder="Search our website..."
+            class="flex-grow py-2 px-4 rounded-l-lg border-t border-b border-l border-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary"
+          />
+          <button
+            type="submit"
+            class="bg-secondary text-white py-2 px-6 rounded-r-lg hover:bg-tertiary transition-colors duration-300"
+          >
+            Search
+          </button>
+        </form>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {
+          categories.map((category) => (
+            <div class="text-center bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 flex flex-col">
+              <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center">
                 <svg class="w-full h-full text-secondary">
-                  <use xlink:href={`/images/category-icons.svg#${category.icon}`}></use>
+                  <use
+                    xlink:href={`/images/category-icons.svg#${category.icon}`}
+                  />
                 </svg>
               </div>
-              <h4 class="text-lg font-heading font-bold mb-2">{category.name}</h4>
-              <p class="text-sm mb-4">{category.description}</p>
-              <a href={`/category/${category.name.toLowerCase().replace(' ', '-')}`} class="inline-block bg-secondary text-white py-2 px-4 rounded hover:bg-tertiary transition-colors duration-300">
-                View All
+              <h3 class="text-xl font-heading font-bold mb-3">
+                {category.name}
+              </h3>
+              <p class="text-gray-600 mb-6">{category.description}</p>
+              <a
+                href={`/category/${category.name.toLowerCase().replace(" ", "-")}`}
+                class="inline-block text-secondary font-semibold hover:text-tertiary transition-colors duration-300 mt-auto"
+              >
+                Explore {category.name} <span class="ml-2">→</span>
               </a>
             </div>
-          ))}
-        </div>
+          ))
+        }
       </div>
     </div>
   </section>
 
-  <section class="mb-12">
-    <h2 class="text-2xl font-heading font-bold mb-6 text-secondary">Recent Blog Posts</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {recentPosts.map((post) => (
-        <BlogPostCard
-          title={post.data.title}
-          excerpt={post.data.excerpt}
-          image={post.data.image}
-          url={`/blog/${post.slug}`}
-          date={new Date(post.data.date).toLocaleDateString()}
-          category={post.data.category}
-        />
-      ))}
-    </div>
-    <div class="text-center mt-8">
-      <a href="/blog" class="inline-block bg-secondary text-white py-2 px-6 rounded-lg hover:bg-tertiary transition-colors duration-300">
-        View All Blog Posts
-      </a>
+  <section class="mb-12 container">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-2xl font-heading font-bold mb-6 text-secondary">
+        Recent Blog Posts
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {
+          recentPosts.map((post) => (
+            <BlogPostCard
+              title={post.data.title}
+              excerpt={post.data.excerpt}
+              image={post.data.image}
+              url={`/blog/${post.slug}`}
+              date={new Date(post.data.publishDate).toLocaleDateString()}
+              category={post.data.category}
+            />
+          ))
+        }
+      </div>
+      <div class="text-center mt-8">
+        <a
+          href="/blog"
+          class="inline-block bg-secondary text-white py-2 px-6 rounded-lg hover:bg-tertiary transition-colors duration-300"
+        >
+          View All Blog Posts
+        </a>
+      </div>
     </div>
   </section>
-  
-  <section class="bg-accent bg-opacity-20 p-8 rounded-lg">
-    <h2 class="text-2xl font-heading font-bold mb-4 text-tertiary">Subscribe to Our Blog</h2>
-    <p class="mb-4">Stay up-to-date with our latest blog posts, health tips, product reviews, and exclusive offers.</p>
-    <form class="flex">
-      <input
-        type="email"
-        placeholder="Enter your email"
-        class="flex-grow py-2 px-4 rounded-l-lg border-t border-b border-l border-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary"
-      />
-      <button
-        type="submit"
-        class="bg-secondary text-white py-2 px-6 rounded-r-lg hover:bg-tertiary transition-colors duration-300"
+
+  <section class="container mx-auto">
+    <div class="max-w-7xl mx-auto">
+      <div
+        class="bg-gradient-to-br from-secondary to-secondary/80 p-8 rounded-2xl shadow-lg"
       >
-        Subscribe
-      </button>
-    </form>
+        <div class="max-w-3xl text-center mx-auto">
+          <h2 class="text-3xl font-heading font-bold mb-4 text-white">
+            Stay in the Loop
+          </h2>
+          <p class="mb-6 text-gray-200 leading-relaxed">
+            Get the latest health insights, product reviews, and exclusive
+            offers delivered straight to your inbox. Join our community of
+            wellness enthusiasts!
+          </p>
+          <form class="flex flex-col sm:flex-row gap-4">
+            <div class="flex-grow relative">
+              <input
+                type="email"
+                placeholder="Your email address"
+                aria-label="Email address"
+                required
+                class="w-full py-3 px-4 rounded-lg border-2 border-transparent bg-white bg-opacity-90 focus:outline-none focus:border-secondary transition-colors duration-300 placeholder-gray-400"
+              />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5 absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
+                ></path>
+                <path
+                  d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
+                ></path>
+              </svg>
+            </div>
+            <button
+              type="submit"
+              class="bg-secondary text-white py-3 px-6 rounded-lg hover:bg-tertiary transition-colors duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary"
+            >
+              Subscribe
+            </button>
+          </form>
+          <p class="mt-4 text-sm text-gray-200">
+            By subscribing, you agree to our <a
+              href="/privacy-policy"
+              class="underline hover:text-secondary">Privacy Policy</a
+            > and <a
+              href="/terms-of-service"
+              class="underline hover:text-secondary">Terms of Service</a
+            >.
+          </p>
+        </div>
+      </div>
+    </div>
   </section>
 </Layout>

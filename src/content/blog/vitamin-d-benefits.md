@@ -1,12 +1,13 @@
 ---
 title: "The Sunshine Vitamin: Unveiling the Benefits of Vitamin D"
 excerpt: "Discover the crucial role of Vitamin D in your health and learn how to ensure you're getting enough of this essential nutrient."
+slug: vitamin-d-benefits
 image: "/images/vitamin-d-sunlight.jpg"
-date: "2023-05-30"
+publishDate: 2023-05-30
 category: "Vitamins"
+author: Harry
 ---
 
-# The Sunshine Vitamin: Unveiling the Benefits of Vitamin D
 
 Vitamin D, often called the "sunshine vitamin," is a crucial nutrient that plays a vital role in maintaining overall health. In this article, we'll explore the numerous benefits of Vitamin D and how you can ensure you're getting enough.
 
