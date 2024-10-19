@@ -141,62 +141,66 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"blog": {
-"benefits-of-probiotics.md": {
-	id: "benefits-of-probiotics.md";
-  slug: "benefits-of-probiotics";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"l-theanine-caffeine-synergy.md": {
-	id: "l-theanine-caffeine-synergy.md";
-  slug: "l-theanine-caffeine-synergy";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"omega-3-benefits.md": {
-	id: "omega-3-benefits.md";
-  slug: "omega-3-benefits";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"red-yeast-rice-cholesterol.md": {
-	id: "red-yeast-rice-cholesterol.md";
-  slug: "red-yeast-rice-cholesterol";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"understanding-nootropics.md": {
-	id: "understanding-nootropics.md";
-  slug: "understanding-nootropics";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"vitamin-b12-bridging-the-nutritional-gap.md": {
-	id: "vitamin-b12-bridging-the-nutritional-gap.md";
-  slug: "vitamin-b12-bridging-the-nutritional-gap";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"vitamin-d-unlock-the-power-of-the-sun.md": {
-	id: "vitamin-d-unlock-the-power-of-the-sun.md";
-  slug: "vitamin-d-benefits";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-};
-
+			"benefits-of-probiotics.md": {
+				id: "benefits-of-probiotics.md";
+				slug: "benefits-of-probiotics";
+				body: string;
+				collection: "blog";
+				data: InferEntrySchema<"blog">; // Assuming this is the desired type
+			} & { render(): Render[".md"] };
+			"importance-of-vitamin-d.md": {
+				id: "importance-of-vitamin-d.md";
+				slug: "importance-of-vitamin-d";
+				body: string;
+				collection: "blog";
+				data: InferEntrySchema<"blog">; // Assuming this is the desired type
+			} & { render(): Render[".md"] };
+			"l-theanine-caffeine-synergy.md": {
+				id: "l-theanine-caffeine-synergy.md";
+				slug: "l-theanine-caffeine-synergy";
+				body: string;
+				collection: "blog";
+				data: InferEntrySchema<"blog">; // Assuming this is the desired type
+			} & { render(): Render[".md"] };
+			"omega-3-benefits.md": {
+				id: "omega-3-benefits.md";
+				slug: "omega-3-benefits";
+				body: string;
+				collection: "blog";
+				data: InferEntrySchema<"blog">; // Assuming this is the desired type
+			} & { render(): Render[".md"] };
+			"red-yeast-rice-cholesterol.md": {
+				id: "red-yeast-rice-cholesterol.md";
+				slug: "red-yeast-rice-cholesterol";
+				body: string;
+				collection: "blog";
+				data: InferEntrySchema<"blog">; // Assuming this is the desired type
+			} & { render(): Render[".md"] };
+			"understanding-nootropics.md": {
+				id: "understanding-nootropics.md";
+				slug: "understanding-nootropics";
+				body: string;
+				collection: "blog";
+				data: InferEntrySchema<"blog">; // Assuming this is the desired type
+			} & { render(): Render[".md"] };
+			"vitamin-b12-bridging-the-nutritional-gap.md": {
+				id: "vitamin-b12-bridging-the-nutritional-gap.md";
+				slug: "vitamin-b12-bridging-the-nutritional-gap";
+				body: string;
+				collection: "blog";
+				data: InferEntrySchema<"blog">; // Assuming this is the desired type
+			} & { render(): Render[".md"] };
+			"vitamin-d-unlock-the-power-of-the-sun.md": {
+				id: "vitamin-d-unlock-the-power-of-the-sun.md";
+				slug: "vitamin-d-benefits";
+				body: string;
+				collection: "blog";
+				data: InferEntrySchema<"blog">; // Assuming this is the desired type
+			} & { render(): Render[".md"] };
+		};
 	};
 
-	type DataEntryMap = {
-		
-	};
+	type DataEntryMap = {};
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;
 
