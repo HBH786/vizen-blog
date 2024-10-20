@@ -12,8 +12,8 @@ const quickLinks = [
 ];
 
 const socialLinks = [
+  { href: "https://x.com/vizenhealth", icon: "twitter", label: "Twitter" },
   { href: "#", icon: "facebook", label: "Facebook" },
-  { href: "#", icon: "twitter", label: "Twitter" },
   { href: "#", icon: "instagram", label: "Instagram" },
   { href: "#", icon: "pinterest", label: "Pinterest" },
 ];
@@ -36,6 +36,8 @@ const socialLinks = [
                   href={href}
                   class="hover:text-white transition-colors duration-300"
                   aria-label={label}
+                  target="_blank" 
+                  rel="noopener noreferrer"
                 >
                   <svg class="size-6 text-lg">
                     <use xlink:href={`/images/social-icons.svg#${icon}`} />
@@ -82,7 +84,7 @@ const socialLinks = [
               type="submit"
               class="w-full px-4 py-3 text-white bg-secondary rounded-lg hover:bg-tertiary/70 transition-colors duration-300 font-semibold"
             >
-              Subscribe
+              Coming Soon
             </button>
           </form>
         </div>
@@ -91,12 +93,9 @@ const socialLinks = [
             Contact Us
           </h4>
           <address class="text-sm not-italic space-y-3">
-            <p></p>
-            <p></p>
+            <p>London,</p>
             <p>United Kingdom</p>
-            <p class="mt-4">Phone:</p>
             <p>Email: admin@vizen.co.uk</p>
-
           </address>
         </div>
       </div>
