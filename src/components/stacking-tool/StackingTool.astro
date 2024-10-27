@@ -1,0 +1,52 @@
+---
+// src/components/stacking-tool/StackingTool.astro
+
+import { useState } from "react";
+
+const healthAspects = {
+  energy: ["Vitamin B12", "Iron", "CoQ10"],
+  immunity: ["Vitamin C", "Zinc", "Elderberry"],
+  digestion: ["Probiotics", "Digestive Enzymes", "Fiber"],
+  skin: ["Vitamin E", "Collagen", "Omega-3"],
+};
+
+// Create state variables for selected health aspect and supplement stack
+let selectedHealthAspect = "";
+let supplementStack = [];
+
+// Function to handle aspect selection
+const handleAspectChange = (event) => {
+  selectedHealthAspect = event.target.value;
+  supplementStack = healthAspects[selectedHealthAspect] || [];
+};
+---
+
+<div class="p-6 border rounded-lg shadow-lg">
+  <h2 class="text-2xl font-heading mb-4">Stack Your Supplements</h2>
+  <label class="block mb-2" for="health-aspect">
+    Choose a health aspect to optimize:
+  </label>
+  <select
+    id="health-aspect"
+    onChange={handleAspectChange}
+    class="p-2 border rounded"
+  >
+    <option value="">Select...</option>
+    {Object.keys(healthAspects).map((aspect) => (
+      <option value={aspect} key={aspect}>
+        {aspect.charAt(0).toUpperCase() + aspect.slice(1)}
+      </option>
+    ))}
+  </select>
+
+  {supplementStack.length > 0 && (
+    <div class="mt-4">
+      <h3 class="text-xl font-heading">Recommended Supplements:</h3>
+      <ul class="list-disc ml-5">
+        {supplementStack.map((supplement) => (
+          <li key={supplement}>{supplement}</li>
+        ))}
+      </ul>
+    </div>
+  )}
+</div>
