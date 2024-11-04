@@ -5,7 +5,7 @@ slug: l-theanine-caffeine-synergy
 image: /images/l-theanine-caffeine.jpg
 publishDate: 2023-06-02
 category: Nootropics
-author: Harry
+author: Vizen
 ---
 
 For those seeking a natural cognitive boost, the combination of L-theanine and caffeine has gained popularity as a powerful nootropic stack. Let's dive into how these two compounds work together to enhance mental performance.

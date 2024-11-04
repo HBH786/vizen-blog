@@ -155,6 +155,20 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"magnesium-calcium.md": {
+	id: "magnesium-calcium.md";
+  slug: "magnesium-calcium";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"melatonin.md": {
+	id: "melatonin.md";
+  slug: "melatonin";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "omega-3-benefits.md": {
 	id: "omega-3-benefits.md";
   slug: "omega-3-benefits";
@@ -207,5 +221,5 @@ declare module 'astro:content' {
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;
 
-	export type ContentConfig = typeof import("../../src/content/config.js");
+	export type ContentConfig = typeof import("./../../src/content/config.js");
 }
