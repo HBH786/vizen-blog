@@ -7,7 +7,7 @@ const blogCollection = defineCollection({
         title: z.string(),
         publishDate: z.date(),
         excerpt: z.string(),
-        category: z.string().nullable(),
+        categories: z.array(z.string()), // Allow multiple categories
         author: z.string(),
         image: z.string(),
         //tags: z.array(z.string()),

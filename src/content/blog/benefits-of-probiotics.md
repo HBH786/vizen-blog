@@ -1,9 +1,9 @@
 ---
-publishDate: 2024-10-18
 title: "Probiotics: Unlocking the Benefits for Your Gut Health"
 slug: benefits-of-probiotics
 excerpt: Discover how probiotics can improve your gut health, boost your immune system, and contribute to overall wellness.
 image: /images/probiotics.jpg
+publishDate: 2024-10-18
 category: Probiotics
 author: Vizen
 ---
