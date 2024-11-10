@@ -4,7 +4,7 @@ excerpt: Explore the synergistic benefits of combining L-theanine and caffeine f
 slug: l-theanine-caffeine-synergy
 image: /images/l-theanine-caffeine.jpg
 publishDate: 2023-06-02
-category: Nootropics
+categories: ["Nootropics"]
 author: Vizen
 ---
 

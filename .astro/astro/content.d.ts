@@ -141,9 +141,9 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"blog": {
-"benefits-of-probiotics.md": {
-	id: "benefits-of-probiotics.md";
-  slug: "benefits-of-probiotics";
+"collagen.md": {
+	id: "collagen.md";
+  slug: "collagen";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
@@ -172,6 +172,13 @@ declare module 'astro:content' {
 "omega-3-benefits.md": {
 	id: "omega-3-benefits.md";
   slug: "omega-3-benefits";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"probiotics.md": {
+	id: "probiotics.md";
+  slug: "benefits-of-probiotics";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">

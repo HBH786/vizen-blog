@@ -4,7 +4,7 @@ excerpt: "Learn about red yeast rice, its potential benefits for cholesterol man
 slug: red-yeast-rice-cholesterol
 image: "/images/red-yeast-rice.jpg"
 publishDate: 2024-10-15
-category: "Supplements" 
+categories: ["Supplements"] 
 author: Vizen
 ---
 

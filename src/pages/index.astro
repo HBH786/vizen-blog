@@ -147,7 +147,7 @@ const site = Astro.site?.href;
               image={post.data.image}
               url={`/blog/${post.slug}`}
               date={new Date(post.data.publishDate).toLocaleDateString()}
-              category={post.data.category}
+              category={Array.isArray(post.data.categories) ? post.data.categories[0] : post.data.category}
             />
           ))
         }
