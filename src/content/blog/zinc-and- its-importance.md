@@ -3,7 +3,7 @@ title: "Introduction to Zinc and Its Importance"
 excerpt: "A detailed overview of the benefits of zinc, its role in the body, and the importance of supplementation."
 image: "/images/zinc.jpg"
 publishDate: 2024-10-17
-category: "Supplements"
+categories: ["Supplements"]
 author: Vizen
 ---
 

@@ -4,7 +4,7 @@ excerpt: Explore the synergistic benefits of combining L-theanine and caffeine f
 slug: melatonin
 image: ""
 publishDate: 2024-06-01
-category: Supplements, Sleep
+categories: ["Supplements", "Sleep"]
 author: Vizen
 ---
 

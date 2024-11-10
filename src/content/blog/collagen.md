@@ -3,7 +3,7 @@ title: "The Ultimate Guide to Collagen: Benefits, Types, and Why You Need It in 
 excerpt: "Explore how collagen can support youthful skin, joint health, and boost natural healing processes with our comprehensive guide on its benefits, types, and how to incorporate it into your wellness routine."
 publishDate: 2024-11-10
 author: "Vizen"
-category: Supplements Vitamins
+categories: ["Supplements"]
 image: ""
 ---
 

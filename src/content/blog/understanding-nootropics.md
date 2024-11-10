@@ -4,7 +4,7 @@ excerpt: "Explore the world of nootropics and how they may improve cognitive fun
 image: "/images/nootropics.jpg"
 slug: understanding-nootropics
 publishDate: 2024-10-19
-category: "Nootropics"
+categories: ["Nootropics"]
 author: Vizen
 ---
 

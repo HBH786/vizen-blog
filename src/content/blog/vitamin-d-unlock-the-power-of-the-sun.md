@@ -4,7 +4,7 @@ excerpt: "Discover the importance of Vitamin D, how it supports your health, and
 slug: vitamin-d-benefits
 image: "/images/vitamin-d.jpg"
 publishDate: 2024-05-30
-category: "Vitamins"
+categories: ["Vitamins"]
 author: Vizen
 ---
 

@@ -3,7 +3,7 @@ title: "Vitamin B12 – Bridging the Nutritional Gap"
 excerpt: "Learn why Vitamin B12 is essential, especially for those on plant-based diets, and discover how to ensure you're getting enough."
 image: "/images/vitaminb12.jpg"
 publishDate: 2024-10-19
-category: "Vitamins"
+categories: ["Vitamins"]
 author: "Vizen"
 ---
 

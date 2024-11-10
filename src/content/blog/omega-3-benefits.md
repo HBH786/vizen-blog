@@ -4,7 +4,7 @@ excerpt: Discover the wide-ranging benefits of omega-3 fatty acids and why they'
 slug: omega-3-benefits
 image: /images/omega-3.jpg
 publishDate: 2024-10-18
-category: Supplements
+categories: ["Supplements"]
 author: Vizen
 ---
 

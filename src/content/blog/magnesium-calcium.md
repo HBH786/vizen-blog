@@ -5,7 +5,7 @@ excerpt: "Understanding the relationship between magnesium and calcium could be 
 slug: magnesium-calcium
 publishDate: 2024-11-11
 author: "Vizen"
-category: "Supplements"
+categories: ["Supplements"]
 image: ""
 ---
 
