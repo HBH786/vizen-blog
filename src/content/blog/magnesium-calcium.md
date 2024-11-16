@@ -6,7 +6,7 @@ slug: magnesium-calcium
 publishDate: 2024-11-11
 author: "Vizen"
 categories: ["Supplements"]
-image: ""
+image: /images/magnesium.jpeg
 ---
 
 # Magnesium & Calcium: The Dynamic Duo Your Body Needs (2024 Guide)

@@ -2,7 +2,7 @@
 title: "Melatonin: Your Guide to Better Sleep"
 excerpt: Explore the synergistic benefits of combining L-theanine and caffeine for improved focus, alertness, and cognitive performance.
 slug: melatonin
-image: ""
+image: /images/melatonin.jpeg
 publishDate: 2024-06-01
 categories: ["Supplements", "Sleep"]
 author: Vizen
