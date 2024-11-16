@@ -148,6 +148,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"creatine.md": {
+	id: "creatine.md";
+  slug: "creatine";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "l-theanine-caffeine-synergy.md": {
 	id: "l-theanine-caffeine-synergy.md";
   slug: "l-theanine-caffeine-synergy";
