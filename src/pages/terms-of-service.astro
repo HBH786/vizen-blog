@@ -1,0 +1,55 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { AstroSeo } from "@astrolib/seo";
+
+const site = Astro.site?.href;
+---
+
+<AstroSeo
+  title="Terms of Service - VIZEN"
+  noindex={false}
+  description="Terms of Service for VIZEN Blog"
+  openGraph={{
+    url: site,
+    title: "Terms of Service - VIZEN",
+    type: "website",
+    site_name: "VIZEN Blog",
+    description: "Terms of Service for VIZEN Blog",
+    images: [],
+  }}
+  twitter={{
+    cardType: "summary",
+  }}
+/>
+
+<Layout title="Terms of Service - VIZEN">
+  <div class="max-w-3xl mx-auto px-4 py-8">
+    <h1 class="text-4xl font-heading font-bold mb-8">Terms of Service</h1>
+    
+    <div class="prose prose-lg">
+      <h2>1. Acceptance of Terms</h2>
+      <p>By accessing and using VIZEN Blog ("the Website"), you accept and agree to be bound by the terms and provision of this agreement.</p>
+
+      <h2>2. Use License</h2>
+      <p>Permission is granted to temporarily access the materials (information or software) on VIZEN Blog for personal, non-commercial transitory viewing only.</p>
+
+      <h2>3. Disclaimer</h2>
+      <p>The materials on VIZEN Blog are provided on an 'as is' basis. VIZEN Blog makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.</p>
+
+      <h2>4. Limitations</h2>
+      <p>In no event shall VIZEN Blog or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on VIZEN Blog.</p>
+
+      <h2>5. Content Accuracy</h2>
+      <p>The materials appearing on VIZEN Blog could include technical, typographical, or photographic errors. VIZEN Blog does not warrant that any of the materials on its website are accurate, complete, or current.</p>
+
+      <h2>6. Links</h2>
+      <p>VIZEN Blog has not reviewed all of the sites linked to its website and is not responsible for the contents of any such linked site. The inclusion of any link does not imply endorsement by VIZEN Blog of the site.</p>
+
+      <h2>7. Modifications</h2>
+      <p>VIZEN Blog may revise these terms of service for its website at any time without notice. By using this website, you are agreeing to be bound by the then current version of these terms of service.</p>
+
+      <h2>8. Governing Law</h2>
+      <p>These terms and conditions are governed by and construed in accordance with the laws of the United Kingdom and you irrevocably submit to the exclusive jurisdiction of the courts in that location.</p>
+    </div>
+  </div>
+</Layout>

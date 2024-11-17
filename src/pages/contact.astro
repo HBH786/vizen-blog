@@ -1,0 +1,38 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ContactForm from '../components/ContactForm';
+import { AstroSeo } from "@astrolib/seo";
+
+const site = Astro.site?.href;
+---
+
+<AstroSeo
+  title="Contact - VIZEN"
+  noindex={false}
+  description="Get in touch with us. We'd love to hear from you!"
+  openGraph={{
+    url: site,
+    title: "Contact - VIZEN",
+    type: "website",
+    site_name: "VIZEN Blog",
+    description: "Get in touch with us. We'd love to hear from you!",
+    images: [],
+  }}
+  twitter={{
+    cardType: "summary",
+  }}
+/>
+
+<Layout title="Contact Us - VIZEN">
+  <div class="max-w-2xl mx-auto px-4 py-8">
+    <h1 class="text-4xl font-heading font-bold text-center mb-8">Contact Us</h1>
+    <p class="text-center mb-8 text-gray-600">
+      Have a question or feedback? We'd love to hear from you! Fill out the form below, and we'll get back to you as soon as possible.
+    </p>
+    <ContactForm client:load />
+    <div class="mt-12 text-center text-gray-600">
+      <p class="mb-2">You can also reach us directly at:</p>
+      <a href="mailto:admin@vizen.co.uk" class="text-secondary hover:underline">admin@vizen.co.uk</a>
+    </div>
+  </div>
+</Layout>

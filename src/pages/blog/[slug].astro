@@ -1,0 +1,86 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import { titleToSlug } from "../../utils/categories";
+
+export async function getStaticPaths() {
+  const blogEntries = await getCollection("blog");
+  return blogEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+import { AstroSeo } from "@astrolib/seo";
+
+const site = Astro.site?.href;
+---
+
+<AstroSeo
+  title={`${entry.data.title} - VIZEN`}
+  noindex={false}
+  description={entry.data.excerpt}
+  openGraph={{
+    url: site,
+    title: entry.data.title,
+    type: "website",
+    site_name: "VIZEN Blog",
+    description: entry.data.excerpt,
+    images: entry.data.image ? [
+      {
+        url: entry.data.image.includes("http") ? entry.data.image : site + entry.data.image,
+      },
+    ] : [],
+  }}
+  twitter={{
+    cardType: "summary",
+  }}
+/>
+
+<Layout title={entry.data.title}>
+  <article class="max-w-3xl mx-auto mt-6">
+    <h1 class="text-4xl font-heading font-bold mb-4 leading-[50px]">
+      {entry.data.title}
+    </h1>
+    <div class="flex flex-wrap items-center gap-4 mb-4">
+      <div class="flex flex-wrap items-center gap-2">
+        {Array.isArray(entry.data.categories) ? (
+          entry.data.categories.map((category) => (
+            <a
+              href={`/category/${titleToSlug(category)}`}
+              class="text-sm bg-secondary text-white px-3 py-1 rounded-full hover:bg-tertiary transition-colors duration-300"
+            >
+              {category}
+            </a>
+          ))
+        ) : (
+          <a
+            href={`/category/${titleToSlug(entry.data.category)}`}
+            class="text-sm bg-secondary text-white px-3 py-1 rounded-full hover:bg-tertiary transition-colors duration-300"
+          >
+            {entry.data.category}
+          </a>
+        )}
+      </div>
+      <time datetime={entry.data.publishDate.toISOString()} class="text-gray-600">
+        {entry.data.publishDate.toLocaleDateString("en-US", {
+          day: "numeric",
+          month: "short",
+          year: "numeric",
+        })}
+      </time>
+    </div>
+    {entry.data.image && (
+      <img
+        src={entry.data.image}
+        alt={entry.data.title}
+        class="w-full h-64 object-cover mb-8 rounded-lg"
+      />
+    )}
+    <div class="prose prose-lg mb-10 max-w-3xl">
+      <Content />
+    </div>
+  </article>
+</Layout>

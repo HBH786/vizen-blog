@@ -1,0 +1,31 @@
+---
+import Layout from "../layouts/Layout.astro";
+import BiohakTool from "../components/biohak-tool/BiohakTool.astro";
+import { AstroSeo } from "@astrolib/seo";
+
+const site = Astro.site?.href;
+---
+
+<AstroSeo
+  title="Biohak Tool - VIZEN"
+  noindex={false}
+  description="Optimize your health with our Biohak tool for personalized supplement recommendations."
+  openGraph={{
+    url: site,
+    title: "Biohak Tool - VIZEN",
+    type: "website",
+    site_name: "VIZEN Blog",
+    description: "Optimize your health with our Biohak tool for personalized supplement recommendations.",
+    images: [],
+  }}
+  twitter={{
+    cardType: "summary",
+  }}
+/>
+
+<Layout title="Biohak Tool">
+  <h1 class="text-4xl font-heading font-bold text-center mb-8">Biohak Tool</h1>
+  <div class="max-w-2xl mx-auto">
+    <BiohakTool />
+  </div>
+</Layout>

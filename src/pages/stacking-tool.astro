@@ -1,0 +1,32 @@
+---
+// src/pages/stacking-tool.astro
+import Layout from "../layouts/Layout.astro";
+import StackingTool from "../components/stacking-tool/StackingTool.astro"; // Ensure the path and extension are correct
+import { AstroSeo } from "@astrolib/seo";
+
+const site = Astro.site?.href; // Get the current site URL
+---
+
+<AstroSeo
+  title="Supplement Stacking Tool - VIZEN"
+  noindex={false}
+  description="Optimize your health with our supplement stacking tool."
+  openGraph={{
+    url: site,
+    title: "Supplement Stacking Tool - VIZEN",
+    type: "website",
+    site_name: "VIZEN Blog",
+    description: "Optimize your health with our supplement stacking tool.",
+    images: [], // Add image URLs here if you have any
+  }}
+  twitter={{
+    cardType: "summary",
+  }}
+/>
+
+<Layout title="Supplement Stacking Tool">
+  <h1 class="text-4xl font-heading font-bold text-center mb-8">Supplement Stacking Tool</h1>
+  <div class="max-w-2xl mx-auto">
+    <StackingTool /> <!-- Include your StackingTool component here -->
+  </div>
+</Layout>

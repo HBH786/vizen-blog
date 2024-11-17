@@ -1,0 +1,33 @@
+[
+    {
+      "goal": "Weight Loss",
+      "stack": [
+        {
+          "id": 1,
+          "name": "Green Tea Extract",
+          "description": "Supports metabolism and fat oxidation."
+        },
+        {
+          "id": 2,
+          "name": "Glucomannan",
+          "description": "A natural fiber that helps you feel full."
+        }
+      ]
+    },
+    {
+      "goal": "Muscle Gain",
+      "stack": [
+        {
+          "id": 3,
+          "name": "Whey Protein",
+          "description": "Supports muscle growth and recovery."
+        },
+        {
+          "id": 4,
+          "name": "Creatine",
+          "description": "Enhances strength and performance."
+        }
+      ]
+    }
+  ]
+  

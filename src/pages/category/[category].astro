@@ -1,0 +1,80 @@
+---
+import { getCollection } from 'astro:content';
+import BlogPostCard from '../../components/BlogPostCard.astro';
+import Layout from '../../layouts/Layout.astro';
+import { slugToTitle, titleToSlug } from '../../utils/categories';
+import { AstroSeo } from "@astrolib/seo";
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  const categories = [...new Set(posts.flatMap(post => 
+    Array.isArray(post.data.categories) ? post.data.categories : [post.data.category]
+  ))];
+  
+  return categories.map(category => ({
+    params: { category: titleToSlug(category) },
+    props: { categoryTitle: category }
+  }));
+}
+
+const { category } = Astro.params;
+const { categoryTitle } = Astro.props;
+
+const posts = await getCollection('blog');
+const categoryPosts = posts.filter(post => {
+  const postCategories = Array.isArray(post.data.categories) 
+    ? post.data.categories 
+    : [post.data.category];
+  
+  return postCategories.some(cat => 
+    titleToSlug(cat) === category
+  );
+});
+
+const sortedPosts = categoryPosts.sort(
+  (a, b) => new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime()
+);
+
+const site = Astro.site?.href;
+---
+
+<AstroSeo
+  title={`${categoryTitle} - VIZEN`}
+  noindex={false}
+  description={`Browse our collection of articles about ${categoryTitle.toLowerCase()}`}
+  openGraph={{
+    url: site,
+    title: `${categoryTitle} - VIZEN`,
+    type: "website",
+    site_name: "VIZEN Blog",
+    description: `Browse our collection of articles about ${categoryTitle.toLowerCase()}`,
+    images: [],
+  }}
+  twitter={{
+    cardType: "summary",
+  }}
+/>
+
+<Layout title={`${categoryTitle} - VIZEN`}>
+  <div class="container mx-auto px-4 py-8">
+    <h1 class="text-4xl font-heading font-bold text-center mb-8">{categoryTitle}</h1>
+    {sortedPosts.length > 0 ? (
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {sortedPosts.map((post) => (
+          <BlogPostCard
+            title={post.data.title}
+            excerpt={post.data.excerpt}
+            image={post.data.image}
+            url={`/blog/${post.slug}`}
+            date={new Date(post.data.publishDate).toLocaleDateString()}
+            category={Array.isArray(post.data.categories) ? post.data.categories[0] : post.data.category}
+          />
+        ))}
+      </div>
+    ) : (
+      <div class="text-center text-gray-600">
+        <p>No posts found in this category yet. Check back soon!</p>
+      </div>
+    )}
+  </div>
+</Layout>

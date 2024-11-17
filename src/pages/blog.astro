@@ -1,0 +1,26 @@
+---
+import Layout from '../layouts/Layout.astro';
+import BlogPostCard from '../components/BlogPostCard.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('blog');
+const sortedPosts = posts.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+---
+
+<Layout title="Blog - VIZEN">
+  <div class="container mx-auto px-4 py-8">
+    <h1 class="text-4xl font-heading font-bold text-center mb-8">VIZEN Blog</h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {sortedPosts.map((post) => (
+        <BlogPostCard
+          title={post.data.title}
+          excerpt={post.data.excerpt}
+          image={post.data.image}
+          url={`/blog/${post.slug}`}
+          date={new Date(post.data.date).toLocaleDateString()}
+          category={post.data.category}
+        />
+      ))}
+    </div>
+  </div>
+</Layout>

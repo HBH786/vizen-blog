@@ -1,0 +1,167 @@
+---
+import SearchBar from "./SearchBar.astro";
+
+const MENU_LINKS = [
+  { name: "Home", link: "/" },
+  { name: "Blog", link: "/blog" },
+  { name: "Categories", link: "/categories" },
+  { name: "Biohak Tool", link: "/biohak-tool" },
+  { name: "About", link: "/about" },
+  { name: "Contact", link: "/contact" },
+];
+---
+
+<header class="sticky top-0 z-50 bg-white shadow-sm transition-all duration-300" id="main-header">
+  <div class="container mx-auto px-4 py-4">
+    <div class="max-w-7xl mx-auto flex flex-row justify-between items-center">
+      <div class="md:mb-0">
+        <a
+          href="/"
+          class="text-2xl font-heading font-bold text-secondary tracking-wide hover:text-secondary transition-colors duration-300"
+          >VIZEN Blog</a
+        >
+      </div>
+      <nav class="mb-4 md:mb-0 hidden lg:block">
+        <ul class="flex flex-wrap justify-center md:space-x-8">
+          {
+            MENU_LINKS.map((item) => (
+              <li class="mx-2 my-1 md:mx-0 md:my-0">
+                <a
+                  href={item.link}
+                  class="text-text hover:text-secondary transition-colors duration-300 font-medium"
+                >
+                  {item.name}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+      <div class="w-full md:w-auto hidden md:block">
+        <SearchBar />
+      </div>
+
+      <div class="max-lg:flex max-lg:items-center ml-auto gap-1 cursor-pointer lg:hidden">
+        <button
+          id="menu-button"
+          class="w-11 h-11 sticky z-[1000] flex justify-center items-center"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+        >
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 32 32"
+            fill="none"
+            id="menu-svg"
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-8 w-8"
+          >
+            <rect x="6" y="9" width="20" height="2" rx="1" fill="currentColor"></rect>
+            <rect x="6" y="15" width="20" height="2" rx="1" fill="currentColor"></rect>
+            <rect x="6" y="21" width="20" height="2" rx="1" fill="currentColor"></rect>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+{/* mobile menu*/}
+<div
+  id="menu-bar"
+  class="fixed inset-0 z-40 bg-white transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden"
+  aria-hidden="true"
+>
+  <div class="h-full overflow-y-auto">
+    <div class="pt-16 pb-6">
+      <div class="p-4">
+        <SearchBar />
+      </div>
+      {
+        MENU_LINKS.map((menu) => (
+          <div class="border-b border-gray-200">
+            <a
+              href={menu.link}
+              class="block p-4 text-lg font-medium text-gray-900 hover:bg-gray-50"
+            >
+              {menu.name}
+            </a>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</div>
+
+<style>
+  #menu-button.menu-active rect:nth-of-type(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  #menu-button.menu-active rect:nth-of-type(2) {
+    opacity: 0;
+  }
+
+  #menu-button.menu-active rect:nth-of-type(3) {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+
+  #menu-bar.active {
+    transform: translateX(0);
+  }
+
+  /* Add smooth transitions for the menu button */
+  #menu-button rect {
+    transition: all 0.3s ease-in-out;
+  }
+</style>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const menuBar = document.getElementById("menu-bar");
+    const menuButton = document.getElementById("menu-button");
+    const body = document.body;
+    const header = document.getElementById("main-header");
+
+    if (header) {
+      window.onscroll = () => {
+        if (window.scrollY > 80) {
+          header.classList.add("backdrop-blur-md", "bg-white/80");
+          header.classList.remove("bg-white");
+        } else {
+          header.classList.remove("backdrop-blur-md", "bg-white/80");
+          header.classList.add("bg-white");
+        }
+      };
+    }
+
+    if (menuButton && menuBar) {
+      menuButton.addEventListener("click", () => {
+        menuBar.classList.toggle("active");
+        menuButton.classList.toggle("menu-active");
+        body.classList.toggle("overflow-hidden");
+        
+        // Update ARIA attributes
+        const isExpanded = menuButton.classList.contains("menu-active");
+        menuButton.setAttribute("aria-expanded", isExpanded.toString());
+        menuBar.setAttribute("aria-hidden", (!isExpanded).toString());
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener("click", (e) => {
+        if (
+          menuBar.classList.contains("active") &&
+          !menuBar.contains(e.target) &&
+          !menuButton.contains(e.target)
+        ) {
+          menuBar.classList.remove("active");
+          menuButton.classList.remove("menu-active");
+          body.classList.remove("overflow-hidden");
+          menuButton.setAttribute("aria-expanded", "false");
+          menuBar.setAttribute("aria-hidden", "true");
+        }
+      });
+    }
+  });
+</script>

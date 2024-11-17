@@ -1,0 +1,71 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { AstroSeo } from "@astrolib/seo";
+
+const site = Astro.site?.href;
+---
+
+<AstroSeo
+  title="About - VIZEN"
+  noindex={false}
+  description="VIZEN is your trusted source for evidence-based information on vitamins, supplements, nootropics, and natural health. Our mission is to empower you with knowledge to make informed decisions about your health and well-being."
+  openGraph={{
+    url: site,
+    title: "About - VIZEN",
+    type: "website",
+    site_name: "VIZEN Blog",
+    description:
+      "VIZEN is your trusted source for evidence-based information on vitamins, supplements, nootropics, and natural health. Our mission is to empower you with knowledge to make informed decisions about your health and well-being.",
+    images: [],
+  }}
+  twitter={{
+    cardType: "summary",
+  }}
+/>
+
+<Layout title="About Us - VIZEN Blog">
+  <h1 class="text-4xl font-heading font-bold text-center mb-8">About VIZEN Blog</h1>
+  <div class="max-w-3xl mx-auto prose prose-lg">
+    <p class="mb-6">
+      VIZEN is your trusted source for evidence-based information on vitamins, supplements, nootropics, and natural health. Our mission is to empower you with knowledge to make informed decisions about your health and well-being through our regularly updated blog posts and articles.
+    </p>
+    <p class="mb-6">
+    <h2 class="text-2xl font-heading font-bold mb-4">A Bit About Us </h2>
+      Welcome to VIZEN, where we’re committed to helping you unlock your health potential through natural health solutions and supplements. We understand how overwhelming it can be to sort through the vast amount of information and products in the wellness space. That’s why we’re here—to simplify the process and provide clear, reliable guidance.
+    </p>
+
+    <p class="mb-6">
+      At VIZEN, our goal is to help you make informed decisions about your health. We cut through the noise, offering straightforward advice on supplements and natural health options that are right for you. Our focus is on giving you the facts you need to navigate the crowded marketplace with confidence.
+    </p>
+    
+    <p class="mb-6">
+      Whether you're just starting to explore natural health or you're looking for more specific recommendations, we’re here to make things easier. With our research and insights, you’ll have the tools you need to take control of your well-being.
+    </p>
+
+    <p class="mb-6">
+    <h2 class="text-2xl font-heading font-bold mb-4">Our Blog Covers</h2>
+    <ul class="list-disc list-inside mb-6">
+      <li><strong>Alternative Health:</strong> Dive into the world of holistic health with us! From acupuncture to chiropractic care, we explore various therapies that aim to treat the root causes of health issues, not just the symptoms.</li>
+      <li><strong>Vitamins and Supplements:</strong> Get the lowdown on essential nutrients and how they can boost your health. We break down the benefits of different vitamins and supplements, so you can make smart choices for your wellbeing.</li>
+      <li><strong>Natural Healthcare: </strong>Discover the magic of nature with tips on using herbs, essential oils, and other natural remedies. We also share advice on healthy lifestyle changes like diet and exercise that can make a big difference.</li>
+      <li>Latest research and trends in natural health</li>
+    </ul>
+    </p>
+
+    <p class="mb-6">
+      We are committed to providing accurate, up-to-date, and unbiased information through our blog posts to help you navigate the complex world of natural health and supplementation.
+    </p>
+    
+    <p class="mb-6">
+      <strong>Disclaimer:</strong> While we strive to provide well-researched, accurate information, the content on VIZEN is for informational purposes only and should not be taken as medical advice. We recommend consulting a healthcare professional before making any significant changes to your health regimen, especially if you have pre-existing conditions or are taking medications. Our recommendations may not be suitable for everyone, and individual results can vary.
+    </p>
+
+    <p>
+      At VIZEN, we believe in practical, accessible health solutions—and we’re here to help you find them.
+    </p>
+    
+    <p>
+      Thank you for choosing VIZEN Blog as your partner in your journey towards better health.
+    </p>
+  </div>
+</Layout>

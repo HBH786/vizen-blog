@@ -1,0 +1,68 @@
+---
+import { titleToSlug } from "../utils/categories";
+
+export interface Props {
+  title: string;
+  excerpt: string;
+  image: string;
+  url: string;
+  date: string;
+  category: string;
+}
+
+const { title, excerpt, image, url, date, category } = Astro.props;
+const defaultImage = "/images/default-post.jpg";
+---
+
+<article
+  class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col transition-transform duration-300 hover:scale-[1.008]"
+>
+  <a href={url} class="block relative aspect-video overflow-hidden">
+    <img
+      src={image || defaultImage}
+      alt={title}
+      class="w-full h-full object-cover transition-transform duration-300 hover:scale-[1.005]"
+      loading="lazy"
+    />
+  </a>
+  <div class="p-6 flex flex-col flex-1">
+    <div class="flex items-center justify-between mb-3">
+      <a
+        href={`/category/${titleToSlug(category)}`}
+        class="text-xs font-semibold bg-secondary text-white px-3 py-1 rounded-full hover:bg-tertiary transition-colors duration-300"
+      >
+        {category}
+      </a>
+      <time datetime={date} class="text-sm text-gray-500">{date}</time>
+    </div>
+    <h2 class="text-xl font-heading font-bold mb-3 line-clamp-2">
+      <a
+        href={url}
+        class="text-text hover:text-secondary transition-colors duration-300"
+      >
+        {title}
+      </a>
+    </h2>
+    <p class="text-gray-700 mb-4 flex-grow line-clamp-3">{excerpt}</p>
+    <a
+      href={url}
+      class="mt-auto inline-flex items-center text-sm font-medium text-secondary hover:underline"
+      aria-label={`Read more about ${title}`}
+    >
+      Read More
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4 ml-1"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M9 5l7 7-7 7"></path>
+      </svg>
+    </a>
+  </div>
+</article>

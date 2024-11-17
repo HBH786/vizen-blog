@@ -1,0 +1,37 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageFind from "astro-pagefind/components/Search";
+import { AstroSeo } from "@astrolib/seo";
+
+export const prerender = false;
+
+const q = Astro.url.searchParams.get("q") ?? undefined;
+
+const site = Astro.site?.href;
+---
+
+<AstroSeo
+  title="Search - VIZEN"
+  noindex={false}
+  openGraph={{
+    url: site,
+    title: "Search - VIZEN",
+    type: "website",
+    site_name: "VIZEN Blog",
+    images: [],
+  }}
+  twitter={{
+    cardType: "summary",
+  }}
+/>
+
+<Layout title="Search">
+  <div class="flex flex-col items-center container min-h-[60vh] mx-auto">
+    <h1 class="mb-4 uppercase">
+      Search <span class="text-secondary">VIZEN BLOG</span>
+    </h1>
+    <div class="max-w-6xl w-full mx-auto">
+      <PageFind query={q} id="search" className="pagefind-ui" />
+    </div>
+  </div>
+</Layout>

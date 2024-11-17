@@ -1,0 +1,74 @@
+---
+import { getCollection } from "astro:content";
+import BlogPostCard from "../../components/BlogPostCard.astro";
+import Pagination from "../../components/Pagination.astro";
+import Layout from "../../layouts/Layout.astro";
+
+interface Props {
+    page: Page
+}
+
+export async function getStaticPaths({ paginate }) {
+  const posts = await getCollection("blog");
+  const sortedPosts = posts.sort(
+    (a, b) =>
+      new Date(b.data.publishDate).getTime() -
+      new Date(a.data.publishDate).getTime()
+  );
+  return paginate(sortedPosts, {pageSize: 4});
+}
+
+const { page } = Astro.props;
+
+const allPages = [...Array(page.lastPage).keys()].map((num) => {
+	return `/blog${num === 0 ? '' : `/${String(num + 1)}`}`;
+});
+import { AstroSeo } from "@astrolib/seo";
+
+const site = Astro.site?.href;
+---
+
+<AstroSeo
+  title="Blog - VIZEN"
+  noindex={false}
+  description="VIZEN Blog"
+  openGraph={{
+    url: site,
+    title: "Blog - VIZEN",
+    type: "website",
+    site_name: "VIZEN Blog",
+    description:
+      "VIZEN Blog",
+    images: [],
+  }}
+  twitter={{
+    cardType: "summary",
+  }}
+/>
+
+<Layout title="Blog - VIZEN">
+  <div class="container mx-auto px-4 py-8">
+    <div class="max-w-7xl mx-auto">
+      <h1 class="text-4xl font-heading font-bold text-center mb-8">
+        VIZEN Blog
+      </h1>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {
+          page.data.map((post) => (
+            <BlogPostCard
+              title={post.data.title}
+              excerpt={post.data.excerpt}
+              image={post.data.image}
+              url={`/blog/${post.slug}`}
+              date={new Date(post.data.publishDate).toLocaleDateString()}
+              category={post.data.category}
+            />
+          ))
+        }
+      </div>
+      <div class="flex flex-row justify-center mt-16 mb-6 items-center">
+        <Pagination allPages={allPages} currentPage={page.currentPage} totalPages={page.lastPage} />
+      </div>
+    </div>
+  </div>
+</Layout>
