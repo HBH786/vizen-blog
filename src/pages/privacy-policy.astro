@@ -1,0 +1,69 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { AstroSeo } from "@astrolib/seo";
+
+const site = Astro.site?.href;
+---
+
+<AstroSeo
+  title="Privacy Policy - VIZEN"
+  noindex={false}
+  description="Privacy Policy for VIZEN Blog"
+  openGraph={{
+    url: site,
+    title: "Privacy Policy - VIZEN",
+    type: "website",
+    site_name: "VIZEN Blog",
+    description: "Privacy Policy for VIZEN Blog",
+    images: [],
+  }}
+  twitter={{
+    cardType: "summary",
+  }}
+/>
+
+<Layout title="Privacy Policy - VIZEN">
+  <div class="max-w-3xl mx-auto px-4 py-8">
+    <h1 class="text-4xl font-heading font-bold mb-8">Privacy Policy</h1>
+    
+    <div class="prose prose-lg">
+      <p class="lead">Your privacy is important to us. It is VIZEN Blog's policy to respect your privacy regarding any information we may collect from you across our website.</p>
+
+      <h2>Information We Collect</h2>
+      <p>We only ask for personal information when we truly need it to provide a service to you. We collect it by fair and lawful means, with your knowledge and consent.</p>
+
+      <h2>Log Data</h2>
+      <p>When you visit our website, our servers may automatically log the standard data provided by your web browser. This data is considered "non-identifying information", as it does not personally identify you on its own.</p>
+
+      <h2>Cookies</h2>
+      <p>We use "cookies" to collect information about you and your activity across our site. A cookie is a small piece of data that our website stores on your computer, and accesses each time you visit so we can understand how you use our site and serve you content based on preferences you have specified.</p>
+
+      <h2>Use of Information</h2>
+      <p>We use the information we collect in various ways, including to:</p>
+      <ul>
+        <li>Provide, operate, and maintain our website</li>
+        <li>Improve, personalize, and expand our website</li>
+        <li>Understand and analyze how you use our website</li>
+        <li>Develop new products, services, features, and functionality</li>
+      </ul>
+
+      <h2>Data Security</h2>
+      <p>We are committed to ensuring that your information is secure. We have implemented suitable physical, electronic, and managerial procedures to safeguard and secure the information we collect online.</p>
+
+      <h2>Third-Party Services</h2>
+      <p>We may employ third-party companies and individuals due to the following reasons:</p>
+      <ul>
+        <li>To facilitate our Service;</li>
+        <li>To provide the Service on our behalf;</li>
+        <li>To perform Service-related services; or</li>
+        <li>To assist us in analyzing how our Service is used.</li>
+      </ul>
+
+      <h2>Changes to This Policy</h2>
+      <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page. Changes to this Privacy Policy are effective when they are posted on this page.</p>
+
+      <h2>Contact Us</h2>
+      <p>If you have any questions about our Privacy Policy, please contact us at admin@vizen.co.uk.</p>
+    </div>
+  </div>
+</Layout>

@@ -1,0 +1,52 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { AstroSeo } from "@astrolib/seo";
+
+const site = Astro.site?.href;
+---
+
+<AstroSeo
+  title="Our Products - VIZEN"
+  noindex={false}
+  description="Explore our range of natural health products"
+  openGraph={{
+    url: site,
+    title: "Our Products - VIZEN",
+    type: "website",
+    site_name: "VIZEN Blog",
+    description: "Explore our range of natural health products",
+    images: [],
+  }}
+  twitter={{
+    cardType: "summary",
+  }}
+/>
+
+<Layout title="Our Products - VIZEN">
+  <div class="max-w-4xl mx-auto px-4 py-16 text-center">
+    <h1 class="text-4xl font-heading font-bold mb-6">Coming Soon</h1>
+    <p class="text-xl text-gray-600 mb-8">We're working hard to bring you a carefully curated selection of premium natural health products.</p>
+    
+    <div class="bg-foreground p-8 rounded-lg shadow-lg">
+      <h2 class="text-2xl font-heading font-bold mb-4">Want to be the first to know?</h2>
+      <p class="text-gray-600 mb-6">Sign up for our newsletter to receive updates about our upcoming product launches and exclusive offers.</p>
+      
+      <form class="max-w-md mx-auto">
+        <div class="flex flex-col sm:flex-row gap-4">
+          <input
+            type="email"
+            placeholder="Enter your email"
+            class="flex-grow px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary"
+            required
+          />
+          <button
+            type="submit"
+            class="bg-secondary text-white px-6 py-2 rounded-lg hover:bg-tertiary transition-colors duration-300"
+          >
+            Notify Me
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</Layout>
