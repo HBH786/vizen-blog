@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 import { titleToSlug } from "../../utils/categories";
 
+=======
+>>>>>>> origin/main
 function SupplementList({ supplements, aspect, description }) {
   return (
     <div>
@@ -17,6 +20,7 @@ function SupplementList({ supplements, aspect, description }) {
             className="bg-white p-4 rounded-lg border border-gray-200 hover:shadow-md transition-shadow duration-300"
           >
             <h4 className="font-heading font-semibold text-secondary mb-2">
+<<<<<<< HEAD
               {supplement.blogUrl ? (
                 <a 
                   href={supplement.blogUrl} 
@@ -27,6 +31,9 @@ function SupplementList({ supplements, aspect, description }) {
               ) : (
                 supplement.name
               )}
+=======
+              {supplement.name}
+>>>>>>> origin/main
             </h4>
             <p className="text-sm text-gray-600">{supplement.description}</p>
             <div className="mt-2 text-xs text-gray-500">

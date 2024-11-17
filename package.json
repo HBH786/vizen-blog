@@ -18,7 +18,11 @@
     "@fontsource/open-sans": "^5.0.8",
     "astro": "^4.15.3",
     "astro-pagefind": "^1.6.0",
+<<<<<<< HEAD
     "pagefind": "^1.0.4",
+=======
+    "pagefind": "^1.1.1",
+>>>>>>> origin/main
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tailwindcss": "^3.3.3"

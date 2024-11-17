@@ -141,6 +141,7 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"blog": {
+<<<<<<< HEAD
 "aloe-vera-healing.md": {
 	id: "aloe-vera-healing.md";
   slug: "aloe-vera-healing";
@@ -155,6 +156,8 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+=======
+>>>>>>> origin/main
 "ashwaganda.md": {
 	id: "ashwaganda.md";
   slug: "ashwaganda";
@@ -169,6 +172,7 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+<<<<<<< HEAD
 "chamomile-healing-herb.md": {
 	id: "chamomile-healing-herb.md";
   slug: "chamomile-healing-herb";
@@ -183,6 +187,8 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+=======
+>>>>>>> origin/main
 "collagen.md": {
 	id: "collagen.md";
   slug: "collagen";
@@ -190,6 +196,7 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+<<<<<<< HEAD
 "coq10-cellular-energy.md": {
 	id: "coq10-cellular-energy.md";
   slug: "coq10-cellular-energy";
@@ -197,6 +204,8 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+=======
+>>>>>>> origin/main
 "creatine.md": {
 	id: "creatine.md";
   slug: "creatine";
@@ -204,6 +213,7 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+<<<<<<< HEAD
 "echinacea-immune-support.md": {
 	id: "echinacea-immune-support.md";
   slug: "echinacea-immune-support";
@@ -239,6 +249,8 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+=======
+>>>>>>> origin/main
 "l-theanine-caffeine-synergy.md": {
 	id: "l-theanine-caffeine-synergy.md";
   slug: "l-theanine-caffeine-synergy";
@@ -267,6 +279,7 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+<<<<<<< HEAD
 "peppermint-digestive-aid.md": {
 	id: "peppermint-digestive-aid.md";
   slug: "peppermint-digestive-aid";
@@ -274,6 +287,8 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+=======
+>>>>>>> origin/main
 "probiotics.md": {
 	id: "probiotics.md";
   slug: "benefits-of-probiotics";
@@ -288,6 +303,7 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+<<<<<<< HEAD
 "tea-tree-oil-natural-antiseptic.md": {
 	id: "tea-tree-oil-natural-antiseptic.md";
   slug: "tea-tree-oil-natural-antiseptic";
@@ -302,6 +318,8 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+=======
+>>>>>>> origin/main
 "understanding-nootropics.md": {
 	id: "understanding-nootropics.md";
   slug: "understanding-nootropics";
@@ -309,6 +327,7 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+<<<<<<< HEAD
 "valerian-sleep-aid.md": {
 	id: "valerian-sleep-aid.md";
   slug: "valerian-sleep-aid";
@@ -316,6 +335,8 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+=======
+>>>>>>> origin/main
 "vitamin-b12-bridging-the-nutritional-gap.md": {
 	id: "vitamin-b12-bridging-the-nutritional-gap.md";
   slug: "vitamin-b12-bridging-the-nutritional-gap";

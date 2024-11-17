@@ -13,7 +13,13 @@ const MENU_LINKS = [
 
 <header class="sticky top-0 z-50 bg-white shadow-sm transition-all duration-300" id="main-header">
   <div class="container mx-auto px-4 py-4">
+<<<<<<< HEAD
     <div class="max-w-7xl mx-auto flex flex-row justify-between items-center">
+=======
+    <div
+      class="max-w-7xl  mx-auto flex flex-row justify-between items-center"
+    >
+>>>>>>> origin/main
       <div class="md:mb-0">
         <a
           href="/"
@@ -41,12 +47,21 @@ const MENU_LINKS = [
         <SearchBar />
       </div>
 
+<<<<<<< HEAD
       <div class="max-lg:flex max-lg:items-center ml-auto gap-1 cursor-pointer lg:hidden">
         <button
           id="menu-button"
           class="w-11 h-11 sticky z-[1000] flex justify-center items-center"
           aria-label="Toggle menu"
           aria-expanded="false"
+=======
+      <div
+        class="max-lg:flex max-lg:items-center ml-auto gap-1 cursor-pointer lg:hidden"
+      >
+        <button
+          id="menu-button"
+          class="w-11 h-11 sticky z-[1000] flex justify-center items-center"
+>>>>>>> origin/main
         >
           <svg
             width="20"
@@ -57,9 +72,18 @@ const MENU_LINKS = [
             xmlns="http://www.w3.org/2000/svg"
             class="h-8 w-8"
           >
+<<<<<<< HEAD
             <rect x="6" y="9" width="20" height="2" rx="1" fill="currentColor"></rect>
             <rect x="6" y="15" width="20" height="2" rx="1" fill="currentColor"></rect>
             <rect x="6" y="21" width="20" height="2" rx="1" fill="currentColor"></rect>
+=======
+            <rect x="6" y="9" width="20" height="2" rx="1" fill="currentColor"
+            ></rect>
+            <rect x="6" y="15" width="20" height="2" rx="1" fill="currentColor"
+            ></rect>
+            <rect x="6" y="21" width="20" height="2" rx="1" fill="currentColor"
+            ></rect>
+>>>>>>> origin/main
           </svg>
         </button>
       </div>
@@ -70,6 +94,7 @@ const MENU_LINKS = [
 {/* mobile menu*/}
 <div
   id="menu-bar"
+<<<<<<< HEAD
   class="fixed inset-0 z-40 bg-white transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden"
   aria-hidden="true"
 >
@@ -114,15 +139,96 @@ const MENU_LINKS = [
   /* Add smooth transitions for the menu button */
   #menu-button rect {
     transition: all 0.3s ease-in-out;
+=======
+  class="z-[10] max-lg:flex flex-col absolute top-16 w-full h-screen bg-white transition-all ease-in duration-200"
+>
+  <!-- links -->
+  <div class="p-4">
+    <SearchBar />
+  </div>
+  {
+    MENU_LINKS.map((menu) => (
+      <div
+        class="flex justify-between p-4 sm:px-6"
+        style="box-shadow: inset 0 -1px 0 0 #e0e1e6;"
+      >
+        <a
+          href={menu.link}
+          class="w-full text-black inline-flex max-md:text-[16px] max-md:leading-[22px] font-medium"
+        >
+          {menu.name}
+        </a>
+      </div>
+    ))
+  }
+</div>
+
+<style>
+  #menu-bar {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  #menu-bar.active {
+    visibility: visible;
+    opacity: 100;
+  }
+
+  #menu-button.menu-active {
+    overflow: hidden;
+
+    rect:nth-of-type(1) {
+      transform: translateY(7px) rotate(45deg);
+      transform-origin: 16px 10px;
+      transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+    }
+    rect:nth-of-type(2) {
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+    rect:nth-of-type(3) {
+      transform: translateY(-5px) rotate(-45deg);
+      transform-origin: 16px 22px;
+      transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+    }
+  }
+  #menu-button {
+    rect:nth-of-type(1) {
+      transform-origin: 16px 10px;
+      transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+    }
+    rect:nth-of-type(2) {
+      transition: opacity 0.2s ease;
+    }
+    rect:nth-of-type(3) {
+      transform-origin: 16px 22px;
+      transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+    }
+>>>>>>> origin/main
   }
 </style>
 
 <script>
   document.addEventListener("astro:page-load", () => {
+<<<<<<< HEAD
     const menuBar = document.getElementById("menu-bar");
     const menuButton = document.getElementById("menu-button");
     const body = document.body;
     const header = document.getElementById("main-header");
+=======
+    let menuBar = document.getElementById("menu-bar") as HTMLElement;
+    let menuButton = document.getElementById("menu-button") as HTMLElement;
+    let body = document.getElementsByTagName("body")[0] as HTMLElement;
+    let header = document.getElementById("main-header") as HTMLElement;
+>>>>>>> origin/main
 
     if (header) {
       window.onscroll = () => {
@@ -136,6 +242,7 @@ const MENU_LINKS = [
       };
     }
 
+<<<<<<< HEAD
     if (menuButton && menuBar) {
       menuButton.addEventListener("click", () => {
         menuBar.classList.toggle("active");
@@ -163,5 +270,12 @@ const MENU_LINKS = [
         }
       });
     }
+=======
+    menuButton.addEventListener("click", () => {
+      menuBar.classList.toggle("active");
+      menuButton.classList.toggle("menu-active");
+      body.classList.toggle("menu-active");
+    });
+>>>>>>> origin/main
   });
 </script>
