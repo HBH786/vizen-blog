@@ -1,3 +1,5 @@
+import { titleToSlug } from "../../utils/categories";
+
 function SupplementList({ supplements, aspect, description }) {
   return (
     <div>
@@ -15,7 +17,16 @@ function SupplementList({ supplements, aspect, description }) {
             className="bg-white p-4 rounded-lg border border-gray-200 hover:shadow-md transition-shadow duration-300"
           >
             <h4 className="font-heading font-semibold text-secondary mb-2">
-              {supplement.name}
+              {supplement.blogUrl ? (
+                <a 
+                  href={supplement.blogUrl} 
+                  className="hover:text-tertiary transition-colors duration-300"
+                >
+                  {supplement.name}
+                </a>
+              ) : (
+                supplement.name
+              )}
             </h4>
             <p className="text-sm text-gray-600">{supplement.description}</p>
             <div className="mt-2 text-xs text-gray-500">
