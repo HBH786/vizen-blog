@@ -1,10 +1,10 @@
 ---
-title: "Turmeric: Nature's Golden Miracle Herb for Total Body Wellness"
-excerpt: "Explore the incredible health benefits of turmeric, a powerful natural remedy with anti-inflammatory, antioxidant, and overall wellness-supporting properties."
-publishDate: 2024-11-17
+title: "Turmeric: The Golden Spice of Life"
+excerpt: "Discover the remarkable health benefits of turmeric, from its potent anti-inflammatory properties to its role in supporting brain health."
+publishDate: 2024-11-10
 author: "Vizen"
-categories: ["Supplements"]
-image: /images/turmeric.jpeg
+categories: ["Herbal Medicine"]
+image: "/images/turmeric.jpg"
 ---
 
 ## What is Turmeric?
@@ -96,3 +96,13 @@ Turmeric, a vibrant yellow spice from the ginger family, has been used for thous
 ## The Bottom Line
 
 Turmeric offers a natural, holistic approach to managing health, with scientific research supporting its numerous benefits. Its versatility and powerful compounds make it a must-have in any 
+
+---
+
+## References:
+
+1. Hewlings SJ, Kalman DS. "Curcumin: A Review of Its Effects on Human Health." Foods. 2017  
+2. Aggarwal BB, et al. "Curcumin: The Indian Solid Gold." Adv Exp Med Biol. 2007  
+3. Nasri H, et al. "Turmeric: A Spice with Multipotent Therapeutic Actions." Herbal Medicine Journal. 2013  
+
+> **Safety Note:** Always consult healthcare professionals before starting any new supplement regimen.
