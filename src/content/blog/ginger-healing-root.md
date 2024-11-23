@@ -4,7 +4,7 @@ excerpt: "Explore the therapeutic properties of ginger, from reducing inflammati
 publishDate: 2024-11-11
 author: "Vizen"
 categories: ["Herbal Medicine"]
-image: "/images/ginger.jpg"
+image: https://vizen-blog-assets.s3.us-east-1.amazonaws.com/ginger.jpg
 ---
 
 ## Ginger: A Powerful Natural Medicine
