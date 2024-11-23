@@ -4,7 +4,7 @@ excerpt: "Discover the remarkable health benefits of turmeric, from its potent a
 publishDate: 2024-11-10
 author: "Vizen"
 categories: ["Herbal Medicine"]
-image: "/images/turmeric.jpg"
+image: https://vizen-blog-assets.s3.us-east-1.amazonaws.com/turmeric.jpg
 ---
 
 ## What is Turmeric?

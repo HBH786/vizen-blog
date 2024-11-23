@@ -4,7 +4,7 @@ excerpt: "Learn about the numerous health benefits of apple cider vinegar and ho
 publishDate: 2024-11-13
 author: "Vizen"
 categories: ["Natural Remedies"]
-image: "/images/apple-cider-vinegar.jpg"
+image: https://vizen-blog-assets.s3.us-east-1.amazonaws.com/apple-cider-vinegar.jpg
 ---
 
 # Apple Cider Vinegar: The Ancient Tonic for Modern Health Benefits

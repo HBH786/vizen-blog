@@ -4,7 +4,7 @@ excerpt: "Learn about the healing properties of aloe vera and its applications f
 publishDate: 2024-11-06
 author: "Vizen"
 categories: ["Natural Remedies"]
-image: "/images/aloe-vera.jpg"
+image: https://vizen-blog-assets.s3.us-east-1.amazonaws.com/aloe-vera.jpg
 ---
 
 # Aloe Vera: Nature's Healing Plant for Skin, Digestion, and Overall Wellness

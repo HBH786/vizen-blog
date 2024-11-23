@@ -4,7 +4,7 @@ excerpt: "Explore the therapeutic benefits of Epsom salt baths and other applica
 publishDate: 2024-11-05
 author: "Vizen"
 categories: ["Natural Remedies"]
-image: "/images/epsom-salt.jpg"
+image: https://vizen-blog-assets.s3.us-east-1.amazonaws.com/epsom-salt.jpeg
 ---
 
 ## Epsom Salt: Mineral Magic for Health

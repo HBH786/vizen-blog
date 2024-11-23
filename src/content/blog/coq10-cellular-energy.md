@@ -4,7 +4,7 @@ excerpt: "Learn about CoQ10's crucial role in cellular energy production and its
 publishDate: 2024-11-16
 author: "Vizen"
 categories: ["Supplements"]
-image: "/images/coq10.jpg"
+image: https://vizen-blog-assets.s3.us-east-1.amazonaws.com/coq-10.jpeg
 ---
 
 ## CoQ10: Powering Your Cells

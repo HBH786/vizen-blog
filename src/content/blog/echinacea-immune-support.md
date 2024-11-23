@@ -4,7 +4,7 @@ excerpt: "Discover how echinacea can strengthen your immune system and help figh
 publishDate: 2024-11-15
 author: "Vizen"
 categories: ["Herbal Medicine"]
-image: "/images/echinacea.jpg"
+image: https://vizen-blog-assets.s3.us-east-1.amazonaws.com/echinacea.jpeg
 ---
 
 ## Understanding Echinacea: Nature's Immune System Booster

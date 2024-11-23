@@ -4,7 +4,7 @@ excerpt: "Explore the calming and therapeutic benefits of chamomile, from promot
 publishDate: 2024-11-14
 author: "Vizen"
 categories: ["Herbal Medicine"]
-image: "/images/chamomile.jpg"
+image: https://vizen-blog-assets.s3.us-east-1.amazonaws.com/chamomile.jpg
 ---
 
 ## Chamomile: Nature's Calming Solution

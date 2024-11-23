@@ -4,7 +4,7 @@ excerpt: "Discover the healing properties of honey and its traditional uses in n
 publishDate: 2024-11-12
 author: "Vizen"
 categories: ["Natural Remedies"]
-image: "/images/honey.jpg"
+image: https://vizen-blog-assets.s3.us-east-1.amazonaws.com/honey.jpg
 ---
 
 ## Honey: Nature's Golden Healer

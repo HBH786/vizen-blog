@@ -4,7 +4,7 @@ excerpt: "Discover the crucial role of iron in energy production, oxygen transpo
 publishDate: 2024-11-16
 author: "Vizen"
 categories: ["Supplements"]
-image: "/images/iron.jpg"
+image: https://vizen-blog-assets.s3.us-east-1.amazonaws.com/iron.jpeg
 ---
 
 ## Understanding Iron's Role in Health

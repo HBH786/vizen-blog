@@ -4,7 +4,7 @@ excerpt: "Discover the potent antimicrobial properties of tea tree oil and its m
 publishDate: 2024-11-04
 author: "Vizen"
 categories: ["Natural Remedies"]
-image: "/images/tea-tree-oil.jpg"
+image: https://vizen-blog-assets.s3.us-east-1.amazonaws.com/tea-tree-oil.jpeg
 ---
 
 ## Tea Tree Oil: Nature's Antiseptic

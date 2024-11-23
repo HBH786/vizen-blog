@@ -4,7 +4,7 @@ excerpt: "Learn about valerian root's calming properties and its traditional use
 publishDate: 2024-11-09
 author: "Vizen"
 categories: ["Herbal Medicine"]
-image: "/images/valerian.jpg"
+image: https://vizen-blog-assets.s3.us-east-1.amazonaws.com/valerian-root.jpeg
 ---
 
 ## Valerian Root: Nature's Sleep Solution

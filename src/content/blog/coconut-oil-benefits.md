@@ -4,7 +4,7 @@ excerpt: "Discover the many therapeutic uses of coconut oil, from supporting met
 publishDate: 2024-11-07
 author: "Vizen"
 categories: ["Natural Remedies"]
-image: "/images/coconut-oil.jpg"
+image: https://vizen-blog-assets.s3.us-east-1.amazonaws.com/coconut-oil.jpg
 ---
 
 ## Coconut Oil: A Natural Health Powerhouse

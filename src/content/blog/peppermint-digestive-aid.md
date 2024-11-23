@@ -4,7 +4,7 @@ excerpt: "Explore the versatile benefits of peppermint, from soothing digestive 
 publishDate: 2024-11-08
 author: "Vizen"
 categories: ["Herbal Medicine"]
-image: "/images/peppermint.jpg"
+image: https://vizen-blog-assets.s3.us-east-1.amazonaws.com/peppermint.jpeg
 ---
 
 ## Peppermint: More Than Just Fresh Breath
