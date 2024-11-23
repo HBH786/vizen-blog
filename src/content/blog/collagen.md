@@ -4,7 +4,7 @@ excerpt: "Explore how collagen can support youthful skin, joint health, and boos
 publishDate: 2024-11-10
 author: "Vizen"
 categories: ["Supplements"]
-image: /images/collagen.jpeg
+image: https://vizen-blog-assets.s3.amazonaws.com/collagen.jpeg
 ---
 
 Are you looking to maintain youthful skin, support joint health, and boost your body's natural healing processes? Collagen might be the missing piece in your wellness puzzle. This comprehensive guide will explore everything you need to know about this vital protein and how it can transform your health from the inside out.

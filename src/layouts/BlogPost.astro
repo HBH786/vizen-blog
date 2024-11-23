@@ -1,0 +1,63 @@
+---
+import { z } from "astro:content";
+
+const { frontmatter, content } = Astro.props;
+const schema = z.object({
+  title: z.string(),
+  publishDate: z.date(),
+  excerpt: z.string(),
+  categories: z.array(z.string()),
+  author: z.string(),
+  image: z.string().url().optional(),
+});
+schema.parse(frontmatter); // Validate frontmatter
+---
+
+<article class="blog-post">
+    <h1 class="title">{frontmatter.title}</h1>
+    <p class="metadata">
+        By {frontmatter.author} on {frontmatter.publishDate.toDateString()}
+    </p>
+
+    {frontmatter.image && (
+        <img
+            class="blog-image"
+            src={frontmatter.image}
+            alt={frontmatter.title}
+        />
+    )}
+
+    <p class="excerpt">{frontmatter.excerpt}</p>
+    <div class="content">
+        {content}
+    </div>
+</article>
+
+<style>
+    .blog-post {
+        margin: 2rem 0;
+        font-family: "Open Sans", sans-serif;
+    }
+    .title {
+        font-family: "Montserrat", sans-serif;
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+    }
+    .metadata {
+        font-size: 0.9rem;
+        color: #888;
+        margin-bottom: 1rem;
+    }
+    .blog-image {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 1rem;
+    }
+    .excerpt {
+        font-style: italic;
+        margin-bottom: 1rem;
+    }
+    .content {
+        line-height: 1.6;
+    }
+</style>
