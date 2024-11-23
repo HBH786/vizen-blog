@@ -2,7 +2,9 @@
 import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import { titleToSlug } from "../../utils/categories";
+import { AstroSeo } from "@astrolib/seo";
 
+// Fetch all blog entries to generate static paths for dynamic routing
 export async function getStaticPaths() {
   const blogEntries = await getCollection("blog");
   return blogEntries.map((entry) => ({
@@ -13,8 +15,8 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
-import { AstroSeo } from "@astrolib/seo";
 
+// Define the site URL for SEO purposes
 const site = Astro.site?.href;
 ---
 
@@ -28,11 +30,16 @@ const site = Astro.site?.href;
     type: "website",
     site_name: "VIZEN Blog",
     description: entry.data.excerpt,
-    images: entry.data.image ? [
-      {
-        url: entry.data.image.includes("http") ? entry.data.image : site + entry.data.image,
-      },
-    ] : [],
+    images: entry.data.image
+      ? [
+          {
+            // Check if the image is an external URL or a local path
+            url: entry.data.image.includes("http")
+              ? entry.data.image  // External URL
+              : `${site}${entry.data.image}`, // Local image path, prepend site URL
+          },
+        ]
+      : [],
   }}
   twitter={{
     cardType: "summary",
@@ -72,13 +79,20 @@ const site = Astro.site?.href;
         })}
       </time>
     </div>
+
+    {/* Display image if it exists */}
     {entry.data.image && (
       <img
-        src={entry.data.image}
+        // Check if the image is an external URL or a local path
+        src={entry.data.image.includes("http")
+          ? entry.data.image // External image
+          : `${Astro.site}${entry.data.image}`} // Local image (prepend site URL)
         alt={entry.data.title}
         class="w-full h-64 object-cover mb-8 rounded-lg"
       />
     )}
+
+    {/* Render content */}
     <div class="prose prose-lg mb-10 max-w-3xl">
       <Content />
     </div>

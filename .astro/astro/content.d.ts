@@ -141,6 +141,20 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"blog": {
+"aloe-vera-healing.md": {
+	id: "aloe-vera-healing.md";
+  slug: "aloe-vera-healing";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"apple-cider-vinegar-benefits.md": {
+	id: "apple-cider-vinegar-benefits.md";
+  slug: "apple-cider-vinegar-benefits";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "ashwaganda.md": {
 	id: "ashwaganda.md";
   slug: "ashwaganda";
@@ -155,9 +169,30 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"chamomile-healing-herb.md": {
+	id: "chamomile-healing-herb.md";
+  slug: "chamomile-healing-herb";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"coconut-oil-benefits.md": {
+	id: "coconut-oil-benefits.md";
+  slug: "coconut-oil-benefits";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "collagen.md": {
 	id: "collagen.md";
   slug: "collagen";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"coq10-cellular-energy.md": {
+	id: "coq10-cellular-energy.md";
+  slug: "coq10-cellular-energy";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
@@ -169,9 +204,51 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"echinacea-immune-support.md": {
+	id: "echinacea-immune-support.md";
+  slug: "echinacea-immune-support";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"epsom-salt-therapy.md": {
+	id: "epsom-salt-therapy.md";
+  slug: "epsom-salt-therapy";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"ginger-healing-root.md": {
+	id: "ginger-healing-root.md";
+  slug: "ginger-healing-root";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"honey-natural-healing.md": {
+	id: "honey-natural-healing.md";
+  slug: "honey-natural-healing";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"iron-essential-mineral.md": {
+	id: "iron-essential-mineral.md";
+  slug: "iron-essential-mineral";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "l-theanine-caffeine-synergy.md": {
 	id: "l-theanine-caffeine-synergy.md";
   slug: "l-theanine-caffeine-synergy";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"lions-mane.md": {
+	id: "lions-mane.md";
+  slug: "lions-mane";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
@@ -197,6 +274,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"peppermint-digestive-aid.md": {
+	id: "peppermint-digestive-aid.md";
+  slug: "peppermint-digestive-aid";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "probiotics.md": {
 	id: "probiotics.md";
   slug: "benefits-of-probiotics";
@@ -211,9 +295,30 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"tea-tree-oil-natural-antiseptic.md": {
+	id: "tea-tree-oil-natural-antiseptic.md";
+  slug: "tea-tree-oil-natural-antiseptic";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"tumeric.md": {
+	id: "tumeric.md";
+  slug: "tumeric";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "understanding-nootropics.md": {
 	id: "understanding-nootropics.md";
   slug: "understanding-nootropics";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"valerian-sleep-aid.md": {
+	id: "valerian-sleep-aid.md";
+  slug: "valerian-sleep-aid";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
